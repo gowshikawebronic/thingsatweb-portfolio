@@ -6,7 +6,7 @@ export const blogData = [
     date: "Oct 24, 2023",
     excerpt:
       "Water pollution is one of the biggest fears for the green globalization. Water pollution affects human health by causing waterborne diseases. The goal of this project is to design and implement a working model of IoT based smart water supply management...",
-    image: "/assets/blog/iot.png", // Dummy Path
+    image: "./assets/blog/iot.png", // Dummy Path
     link: "/blog/monitor-water-supply", // Individual Page Link
   },
   {
@@ -16,7 +16,7 @@ export const blogData = [
     date: "Nov 12, 2023",
     excerpt:
       "It is difficult as a customer to know if you got a good website or less good, as much is hidden in the code so it can be difficult as a customer to get acquainted with if you got a good website. That is why trusting the supplier is so important...",
-    image: "/assets/blog/website.png", // Dummy Path
+    image: "./assets/blog/website.png", // Dummy Path
     link: "/blog/customizable-website",
   },
   {
@@ -26,7 +26,7 @@ export const blogData = [
     date: "Dec 05, 2023",
     excerpt:
       "We offer first-class services for mobile app development. In addition to websites, we also develop applications for mobile phones and tablets. Given the limited surface area of ​​mobile phones, it is important to create intuitive interfaces...",
-    image: "/assets/blog/app.png", // Dummy Path
+    image: "./assets/blog/app.png", // Dummy Path
     link: "/blog/user-friendly-app",
   },
 ];

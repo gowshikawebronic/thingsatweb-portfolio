@@ -10,7 +10,7 @@ const TESTIMONIALS_DATA = [
     id: 1,
     name: "Erik Svensson",
     role: "CTO, Nordic Tech Solutions",
-    image: "/assets/testimonials/user1.jpg", // Replace with actual paths
+    image: "./assets/testimonials/user1.jpg", // Replace with actual paths
     content:
       "ThingsAtWeb transformed our manufacturing process with their Digital Twin technology. The real-time insights we gained were immediate and actionable. A truly visionary partner.",
     rating: 5,
@@ -19,7 +19,7 @@ const TESTIMONIALS_DATA = [
     id: 2,
     name: "Anna Lindberg",
     role: "Director, GreenLeaf Logistics",
-    image: "/assets/testimonials/user2.jpg",
+    image: "./assets/testimonials/user2.jpg",
     content:
       "The production monitoring dashboard gives us visibility we never thought possible. They didn't just build a tool; they engineered a scalable platform for our future growth.",
     rating: 5,
@@ -28,7 +28,7 @@ const TESTIMONIALS_DATA = [
     id: 3,
     name: "Johan Berg",
     role: "Product Manager, Future Systems",
-    image: "/assets/testimonials/user3.jpg",
+    image: "./assets/testimonials/user3.jpg",
     content:
       "Professional, technical, and highly efficient. Their approach to IoT solutions helped us reduce downtime by 40% in the first quarter alone. Highly recommended.",
     rating: 5,

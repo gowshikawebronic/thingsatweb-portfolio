@@ -165,7 +165,7 @@ export default function Hero() {
             <div className="relative rounded-[32px] bg-white p-[16px] shadow-2xl shadow-[#0F172A]/10 border border-[#e2e8f0] transform transition-transform duration-700 hover:rotate-y-2 hover:scale-[1.01] animate-float">
               <div className="relative rounded-[24px] overflow-hidden bg-[#FAF7F6] aspect-square group">
                 <Image
-                  src="/assets/images/hero.png"
+                  src="./assets/images/hero.png"
                   alt="Digital Solutions"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"

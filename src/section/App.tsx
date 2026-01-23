@@ -28,7 +28,7 @@
 //             {/* Main Image Card */}
 //             <div className="relative rounded-[32px] overflow-hidden bg-white shadow-2xl shadow-slate-200/50 ring-1 ring-slate-100 aspect-[4/5] lg:aspect-square transform transition-transform duration-700 hover:scale-[1.01]">
 //               <Image
-//                 src="/assets/images/adddev.png" // Ensure this path is correct in your project
+//                 src="./assets/images/adddev.png" // Ensure this path is correct in your project
 //                 alt="Mobile App Development"
 //                 fill
 //                 className="object-cover object-center"

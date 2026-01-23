@@ -94,7 +94,7 @@ export default function FreeWebsiteSection() {
             {/* Image Container */}
             <div className="relative w-full h-full max-h-[500px] transition-transform duration-700 hover:scale-105 flex items-center justify-center">
               <Image
-                src="/assets/images/website.png" // Dummy Path
+                src="./assets/images/website.png" // Dummy Path
                 alt="Free Website Development"
                 height={400}
                 width={400}
@@ -107,7 +107,7 @@ export default function FreeWebsiteSection() {
           {/* Mobile Image (Visible only on mobile) */}
           <div className="lg:hidden h-[250px] w-full relative bg-indigo-50 border-b border-indigo-100 order-1">
             <Image
-              src="/assets/images/website.png" // Dummy Path
+              src="./assets/images/website.png" // Dummy Path
               alt="Free Website Development"
               fill
               className="object-contain p-[40px]"

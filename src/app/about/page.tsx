@@ -113,7 +113,7 @@ export default function AboutSection() {
             <div className="relative w-full h-full min-h-[500px] flex items-center justify-center p-12">
               <div className="relative w-full h-full">
                 <Image
-                  src="/assets/images/about.png" // Dummy Path
+                  src="./assets/images/about.png" // Dummy Path
                   alt="ThingsAtWeb Team"
                   fill
                   className="object-contain hover:scale-105 transition-transform duration-700 drop-shadow-2xl"
@@ -138,7 +138,7 @@ export default function AboutSection() {
           <div className="lg:hidden h-[300px] w-full relative bg-blue-50 border-b border-blue-100 order-1 overflow-hidden">
              <div className="absolute inset-0 flex items-center justify-center">
                 <Image
-                  src="/assets/images/about.png" // Dummy Path
+                  src="./assets/images/about.png" // Dummy Path
                   alt="ThingsAtWeb Team"
                   fill
                   className="object-cover"

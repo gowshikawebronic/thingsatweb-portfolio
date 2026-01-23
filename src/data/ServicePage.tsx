@@ -34,7 +34,7 @@ export const serviceDetails: Record<string, ServiceDetailType> = {
       highlight: "Make More Money!",
       description: "Convert your Business ideas into Mobile Application before anyone else does. Get into your customers' mobile phone and your business growth will be unstoppable.",
       cta: "Get Started",
-      images: ["/assets/services/app1.png", "/assets/services/app2.png", "/assets/services/app3.png"]
+      images: ["./assets/services/app1.png", "./assets/services/app2.png", "./assets/services/app3.png"]
     },
     cards: [
       {
@@ -68,7 +68,7 @@ export const serviceDetails: Record<string, ServiceDetailType> = {
       highlight: "Websites",
       description: "Mobiles have been widely used to surf the web more than computers recently. We ensure your presence is perfect on every screen.",
       cta: "Get Started",
-      images: ["/assets/services/web1.png", "/assets/services/web2.png", "/assets/services/web3.png"]
+      images: ["./assets/services/web1.png", "./assets/services/web2.png", "./assets/services/web3.png"]
     },
     cards: [
       {
@@ -102,7 +102,7 @@ export const serviceDetails: Record<string, ServiceDetailType> = {
       highlight: "Hosting",
       description: "The choice of domain and hosting service affects the speed and performance of your website! We help you choose the right Domain and Server hosting service as per your business need and customer traffic.",
       cta: "Get Started",
-      images: ["/assets/services/domain1.png", "/assets/services/domain2.png", "/assets/services/domain3.png"]
+      images: ["./assets/services/domain1.png", "./assets/services/domain2.png", "./assets/services/domain3.png"]
     },
     cards: [
       {
@@ -143,7 +143,7 @@ export const serviceDetails: Record<string, ServiceDetailType> = {
       highlight: "Marketing",
       description: "If you understand the basics of digital marketing, you will learn how to find new customers on the internet. We will make digital marketing easy for your business!",
       cta: "Get Started",
-      images: ["/assets/services/digital1.png", "/assets/services/digital2.png", "/assets/services/digital3.png"]
+      images: ["./assets/services/digital1.png", "./assets/services/digital2.png", "./assets/services/digital3.png"]
     },
     cards: [
       {
@@ -177,7 +177,7 @@ export const serviceDetails: Record<string, ServiceDetailType> = {
       highlight: "Optimization",
       description: "Are customers finding your business online? How good is your SEO? We provide free technical SEO analysis and help you rank high on Google without paying for advertising.",
       cta: "Get Started",
-      images: ["/assets/services/seo1.png", "/assets/services/seo2.png", "/assets/services/seo3.png"]
+      images: ["./assets/services/seo1.png", "./assets/services/seo2.png", "./assets/services/seo3.png"]
     },
     cards: [
       {
@@ -211,7 +211,7 @@ export const serviceDetails: Record<string, ServiceDetailType> = {
       highlight: "Solutions",
       description: "What is Internet of things (IoT)? It is the network of devices connected through internet. We offer services to make your products smart and enhanced.",
       cta: "Get Started",
-      images: ["/assets/services/iot1.png", "/assets/services/iot2.png", "/assets/services/iot2.png"]
+      images: ["./assets/services/iot1.png", "./assets/services/iot2.png", "./assets/services/iot2.png"]
     },
     cards: [
       {
