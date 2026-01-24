@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Star, Quote, CheckCircle2 } from "lucide-react";
-import SectionHeader from "@/components/home/SectionHeader";
+import SectionHeader from "@/section/components/home/SectionHeader";
 
 // Mock Data - You can move this to a separate data file later
 const TESTIMONIALS_DATA = [
@@ -37,7 +37,7 @@ const TESTIMONIALS_DATA = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-[#FAF7F6] py-24 lg:py-32 font-sora relative overflow-hidden">
+    <section className="bg-[#FAF7F6] py-10  font-sora relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px] opacity-40 pointer-events-none" />
 

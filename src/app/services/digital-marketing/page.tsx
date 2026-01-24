@@ -1,4 +1,4 @@
-import ServiceDetailSection from "@/components/servicespage/ServiceDetailSection";
+import ServiceDetailSection from "@/section/components/servicespage/ServiceDetailSection";
 import { serviceDetails } from "@/data/ServicePage";
 
 export default function AppDevelopmentPage() {

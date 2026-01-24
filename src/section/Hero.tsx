@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ArrowRight, PlayCircle, CheckCircle2 } from "lucide-react";
-import LeadModal from "@/components/forms/LeadModal"; // Importing your specific modal
+import LeadModal from "@/section/components/forms/LeadModal";
 
 // --- Data ---
 const SERVICES = [
@@ -100,11 +100,14 @@ export default function Hero() {
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#4F86E8]/10 to-transparent rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none animate-pulse-slow" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#16A34A]/5 to-transparent rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
 
-      <div className="container mx-auto px-20 relative z-10">
+      <div className="container mx-auto px-5 lg:px-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[80px] items-center">
           
-          {/* --- Left Content --- */}
-          <div className="flex flex-col items-start max-w-2xl order-2 lg:order-1">
+          {/* TEXT CONTENT:
+             order-1: Top on mobile
+             lg:order-1: Left on desktop
+          */}
+          <div className="flex flex-col items-start max-w-2xl order-1 lg:order-1">
             <h1 className="text-[42px] lg:text-[60px] leading-[1.1] font-extrabold tracking-tight text-[#0F172A] mb-[32px] opacity-0 animate-fade-in-up [animation-delay:200ms] [animation-fill-mode:forwards]">
               Is it <br />
               <span className="relative inline-block text-[#4F86E8]">
@@ -160,8 +163,11 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* --- Right Visual --- */}
-          <div className="relative perspective-1000 w-full max-w-[420px] lg:max-w-[480px] mx-auto lg:mx-0 opacity-0 animate-fade-in-right [animation-delay:600ms] [animation-fill-mode:forwards] lg:pt-8 order-1 lg:order-2">
+          {/* IMAGE CONTENT:
+             order-2: Bottom on mobile
+             lg:order-2: Right on desktop
+          */}
+          <div className="relative perspective-1000 w-full max-w-[420px] lg:max-w-[480px] mx-auto lg:mx-0 opacity-0 animate-fade-in-right [animation-delay:600ms] [animation-fill-mode:forwards] lg:pt-8 order-2 lg:order-2">
             <div className="relative rounded-[32px] bg-white p-[16px] shadow-2xl shadow-[#0F172A]/10 border border-[#e2e8f0] transform transition-transform duration-700 hover:rotate-y-2 hover:scale-[1.01] animate-float">
               <div className="relative rounded-[24px] overflow-hidden bg-[#FAF7F6] aspect-square group">
                 <Image
@@ -193,8 +199,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* --- MODAL USAGE CORRECTED --- */}
-      {/* We only pass what your LeadModal accepts: isOpen, onClose, title, subtitle */}
       {openModal && (
         <LeadModal
           isOpen={!!openModal}
@@ -204,7 +208,6 @@ export default function Hero() {
         />
       )}
 
-      {/* Animation Styles */}
       <style dangerouslySetInnerHTML={{
         __html: `
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }

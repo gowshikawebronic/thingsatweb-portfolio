@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ArrowRight, Users, Zap, BarChart, ShieldCheck } from "lucide-react";
-import LeadModal from "@/components/forms/LeadModal";
+import LeadModal from "@/section/components/forms/LeadModal";
 
 export default function AboutSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);

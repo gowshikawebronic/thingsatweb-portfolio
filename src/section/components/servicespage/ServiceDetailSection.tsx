@@ -7,8 +7,8 @@ import {
   Smartphone, Factory, Globe, Layout, Server, Cloud, ShieldCheck, 
   Megaphone, Target, Search, LineChart, Cpu, Wifi 
 } from "lucide-react";
-import LeadModal from "@/components/forms/LeadModal";
-import SectionHeader from "@/components/home/SectionHeader";
+import LeadModal from "@/section/components/forms/LeadModal";
+import SectionHeader from "@/section/components/home/SectionHeader";
 import { ServiceDetailType } from "@/data/ServicePage";
 
 const ICON_MAP: Record<string, any> = {

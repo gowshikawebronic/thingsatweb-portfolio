@@ -4,8 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
-import LeadModal from "@/components/forms/LeadModal"; // Import the modal
-import SectionHeader from "@/components/home/SectionHeader";
+import LeadModal from "@/section/components/forms/LeadModal"; // Import the modal
+import SectionHeader from "@/section/components/home/SectionHeader";
 
 
 export default function FreeWebsiteSection() {

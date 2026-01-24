@@ -29,12 +29,13 @@ export default function SectionHeader({
   const highlightColor = isWhite ? "text-[#76ea27]" : "text-[#2776ea]";
   const descColor = isWhite ? "text-blue-50/80" : "text-slate-500";
   
-  // Badge Logic: Clean, High-Contrast Tech Look
-  const badgeContainerClass = isWhite
-    ? "bg-white/10 border-white/20 text-white hover:bg-white/20"
-    : "bg-slate-50 border-slate-200 text-slate-700 hover:border-[#2776ea]/30 hover:bg-white";
-    
-  const badgeAccentClass = isWhite ? "bg-[#76ea27]" : "bg-[#2776ea]";
+  // BADGE LOGIC: "Modern Minimalist Slab"
+  // No borders, no dots. Just a clean color wash with bold text.
+  // Light Mode: A very subtle blue tint background with dark blue text.
+  // Dark Mode: A translucent dark background with bright green text for pop.
+  const badgeClass = isWhite
+    ? ""
+    : "";
 
   // Size Logic
   const titleSize = size === "large" 
@@ -45,18 +46,13 @@ export default function SectionHeader({
     <div 
       className={`flex flex-col ${centered ? "items-center text-center" : "items-start text-left"} ${className}`}
     >
-      {/* --- REDESIGNED BADGE --- */}
+      {/* --- NEW BADGE DESIGN --- */}
       {badge && (
-        <div 
-          className={`inline-flex items-center gap-3 px-4 py-2  mb-6 transition-all duration-300 cursor-default select-none group ${badgeContainerClass}`}
+        <span 
+          className={`inline-block px-4 py-1.5 mb-6 rounded-lg text-xs font-extrabold uppercase tracking-widest leading-none transition-colors duration-300 cursor-default select-none ${badgeClass}`}
         >
-          {/* Tech Accent: A Precision Diamond instead of a blurry dot */}
-          <div className={`w-1.5 h-1.5 rotate-45 rounded-[1px] ${badgeAccentClass} group-hover:scale-125 transition-transform duration-300`} />
-          
-          <span className="text-[10px] font-black uppercase tracking-[0.25em] leading-none">
-            {badge}
-          </span>
-        </div>
+          {badge}
+        </span>
       )}
 
       {/* 2. TITLE */}
