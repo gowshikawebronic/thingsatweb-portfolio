@@ -73,7 +73,7 @@ export default function Navbar() {
           {/* --- Logo (Left) --- */}
           <Link href="/" className="relative z-50 flex shrink-0 items-center">
             <Image
-              src="./assets/logo/thingsatweb.png"
+              src="../assets/logo/thingsatweb.png"
               alt="ThingsAtWeb Logo"
               width={140}
               height={40}
@@ -148,7 +148,7 @@ export default function Navbar() {
                   className="flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium hover:bg-black/5 transition-colors"
                 >
                   <Image
-                    src="./assets/logo/america.png"
+                    src="../assets/logo/america.png"
                     alt="EN"
                     width={20}
                     height={20}
@@ -169,7 +169,7 @@ export default function Navbar() {
                     href="/lang/sv"
                     className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-brand-green transition-colors"
                   >
-                    <Image src="./assets/logo/sweden.png" alt="SV" width={20} height={20} className="rounded-full object-cover" />
+                    <Image src="../assets/logo/sweden.png" alt="SV" width={20} height={20} className="rounded-full object-cover" />
                     Swedish
                   </Link>
                 </div>
@@ -272,7 +272,7 @@ export default function Navbar() {
                 className="flex w-full items-center justify-between p-3 rounded-xl hover:bg-slate-50 text-base font-medium text-slate-600 transition-colors"
               >
                 <div className="flex items-center gap-3">
-                  <Image src="./assets/logo/america.png" alt="US" width={24} height={24} className="rounded-full" />
+                  <Image src="../assets/logo/america.png" alt="US" width={24} height={24} className="rounded-full" />
                   English
                 </div>
                 <ChevronDown 
@@ -287,7 +287,7 @@ export default function Navbar() {
                   className="flex items-center gap-3 p-3 pl-4 rounded-xl hover:bg-slate-50 text-base text-slate-600 hover:text-brand-green"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <Image src="./assets/logo/sweden.png" alt="SV" width={24} height={24} className="rounded-full" />
+                  <Image src="../assets/logo/sweden.png" alt="SV" width={24} height={24} className="rounded-full" />
                   Swedish
                 </Link>
               </div>

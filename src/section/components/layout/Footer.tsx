@@ -33,7 +33,7 @@ export default function Footer() {
             {/* --- LOGO ONLY (Clickable) --- */}
             <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
               <Image 
-                src="./assets/logo/thingsatweb.png" 
+                src="../assets/logo/thingsatweb.png" 
                 alt="ThingsAtWeb Logo" 
                 height={130} 
                 width={130}
