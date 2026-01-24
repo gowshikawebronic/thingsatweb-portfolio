@@ -61,10 +61,10 @@ export default function ServiceDetailSection({ data }: Props) {
   };
 
   return (
-    <section className="bg-[#FAF7F6] font-sora overflow-hidden">
+    <section className="bg-[#FAF7F6] font-sora overflow-hidden ">
       
       {/* --- PART 1: HERO INTRO --- */}
-      <div className="relative pt-[120px] pb-[80px]">
+      <div className="relative pt-[120px] pb-[80px] animate-card-entry ">
         {/* --- PART 4: SERVICES HEADER --- */}
       <div className="pt-[40px] pb-[60px] text-center max-w-4xl mx-auto px-6">
          <SectionHeader 

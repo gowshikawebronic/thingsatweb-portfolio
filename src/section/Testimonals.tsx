@@ -37,11 +37,11 @@ const TESTIMONIALS_DATA = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-[#FAF7F6] py-10  font-sora relative overflow-hidden">
+    <section className="bg-[#FAF7F6] py-10  font-sora relative overflow-hidden ">
       {/* Background Pattern */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px] opacity-40 pointer-events-none" />
 
-      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10 ">
         {/* --- Header --- */}
         <SectionHeader
           badge="Success Stories"

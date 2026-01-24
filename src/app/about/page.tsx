@@ -21,7 +21,7 @@ export default function AboutSection() {
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#16A34A]/5 to-transparent rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
 
       
-      <div className="container mx-auto px-[24px] lg:px-[40px] relative z-10">
+      <div className="container mx-auto px-[24px] lg:px-[40px] relative z-10 animate-card-entry">
         
         {/* --- Main Card Layout --- */}
         <div className="relative flex flex-col lg:flex-row bg-white/80 backdrop-blur-sm rounded-[32px] border border-white/60 shadow-2xl shadow-[#0F172A]/5 overflow-hidden min-h-[600px] transition-transform duration-500 ease-out hover:-translate-y-[4px]">

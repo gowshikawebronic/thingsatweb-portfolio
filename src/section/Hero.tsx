@@ -94,7 +94,7 @@ export default function Hero() {
     : "Get a detailed performance report of your current site.";
 
   return (
-    <section className="relative w-full bg-[#FAF7F6] pt-[120px] pb-[80px] lg:pt-[120px] lg:pb-[120px] overflow-hidden font-sora">
+    <section className="relative w-full bg-[#FAF7F6] pt-[120px] pb-[80px] lg:pt-[120px] lg:pb-[120px] overflow-hidden font-sora ">
       
       {/* Premium Background Gradient */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#4F86E8]/10 to-transparent rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none animate-pulse-slow" />
