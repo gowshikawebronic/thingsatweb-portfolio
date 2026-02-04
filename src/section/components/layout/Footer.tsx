@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  Facebook, 
-  Linkedin, 
-  Instagram, 
-  MapPin, 
-  Mail, 
-  Phone, 
-  ArrowRight
+import {
+  Facebook,
+  Linkedin,
+  Instagram,
+  MapPin,
+  Mail,
+  Phone,
+  ArrowRight,
 } from "lucide-react";
 
 export default function Footer() {
@@ -18,43 +18,52 @@ export default function Footer() {
   return (
     // Changed to bg-slate-50 for a subtle light theme
     <footer className="bg-[#FAF7F6] text-slate-600 font-sora pt-24 pb-12 relative overflow-hidden border-t border-slate-200">
-      
       {/* Background Decor (Subtle Blue Fade) */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(39,118,234,0.03)_0%,transparent_70%)] rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none" />
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        
         {/* --- Main Grid --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20">
-          
           {/* Column 1: Company Info */}
           <div className="space-y-8">
-            
             {/* --- LOGO ONLY (Clickable) --- */}
-            <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
-              <Image 
-                src="../assets/logo/thingsatweb.png" 
-                alt="ThingsAtWeb Logo" 
-                height={130} 
+            <Link
+              href="/"
+              className="inline-block hover:opacity-80 transition-opacity"
+            >
+              <Image
+                src="./assets/logo/thingsatweb.png"
+                alt="ThingsAtWeb Logo"
+                height={130}
                 width={130}
-                className="object-contain" 
+                className="object-contain"
               />
             </Link>
             {/* --------------------------- */}
 
             <p className="text-slate-500 leading-relaxed font-medium text-sm max-w-xs">
-              "We help our clients to fulfill their vision not just their requirement specifications."
+              "We help our clients to fulfill their vision not just their
+              requirement specifications."
             </p>
 
             {/* Social Icons */}
             <div className="flex items-center gap-4">
               {[
-                { icon: Facebook, href: "https://www.facebook.com/thingsatweb" },
-                { icon: Linkedin, href: "https://www.linkedin.com/company/thingsatweb/" },
-                { icon: Instagram, href: "https://www.instagram.com/thingsatweb/" },
+                {
+                  icon: Facebook,
+                  href: "https://www.facebook.com/thingsatweb",
+                },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/company/thingsatweb/",
+                },
+                {
+                  icon: Instagram,
+                  href: "https://www.instagram.com/thingsatweb/",
+                },
               ].map((social, i) => (
-                <a 
-                  key={i} 
+                <a
+                  key={i}
                   href={social.href}
                   target="_blank"
                   rel="noreferrer"
@@ -75,20 +84,26 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                "About Us",
-                "Services",
-                "Contact",
-                "News",
-                "Terms and Conditions",
-                "Privacy Policy"
+                { name: "About Us", href: "/about" },
+                { name: "Services", href: "/services" },
+                { name: "Contact", href: "/contact" },
+                { name: "News", href: "/news" },
+                { name: "Terms and Conditions", href: "/terms" },
+                { name: "Privacy Policy", href: "/privacy" },
               ].map((item, i) => (
                 <li key={i}>
-                  <Link 
-                    href="#" 
-                    className="text-sm font-medium text-slate-500 hover:text-[#2776ea] hover:translate-x-1 transition-all flex items-center  gap-2 group"
+                  <Link
+                    href={item.href}
+                    className="text-sm font-medium text-slate-500 hover:text-[#2776ea] hover:translate-x-1 transition-all flex items-center gap-2 group"
                   >
-                    <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 text-[#76ea27] transition-opacity" />
-                    <span className="group-hover:ml-0 -ml-6 transition-all">{item}</span>
+                    <ArrowRight
+                      size={14}
+                      className="opacity-0 group-hover:opacity-100 text-[#76ea27] transition-opacity"
+                    />
+                    {/* We use negative margin to pull text left, then reset it on hover */}
+                    <span className="group-hover:ml-0 -ml-6 transition-all">
+                      {item.name}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -108,18 +123,31 @@ export default function Footer() {
                 "App Development",
                 "Domain & Hosting",
                 "Search Engine Optimization",
-                "Digital Marketing"
-              ].map((item, i) => (
-                <li key={i}>
-                  <Link 
-                    href="#" 
-                    className="text-sm font-medium text-slate-500 hover:text-[#2776ea] hover:translate-x-1 transition-all flex items-center gap-2 group"
-                  >
-                    <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 text-[#76ea27] transition-opacity" />
-                    <span className="group-hover:ml-0 -ml-6 transition-all">{item}</span>
-                  </Link>
-                </li>
-              ))}
+                "Digital Marketing",
+              ].map((item, i) => {
+                // Generate a clean URL slug (e.g., "Domain & Hosting" -> "domain-hosting")
+                const slug = item
+                  .toLowerCase()
+                  .replace(/ & /g, "-") // Replace " & " with "-"
+                  .replace(/\s+/g, "-"); // Replace remaining spaces with "-"
+
+                return (
+                  <li key={i}>
+                    <Link
+                      href={`/services/${slug}`}
+                      className="text-sm font-medium text-slate-500 hover:text-[#2776ea] hover:translate-x-1 transition-all flex items-center gap-2 group"
+                    >
+                      <ArrowRight
+                        size={14}
+                        className="opacity-0 group-hover:opacity-100 text-[#76ea27] transition-opacity"
+                      />
+                      <span className="group-hover:ml-0 -ml-6 transition-all">
+                        {item}
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -144,7 +172,10 @@ export default function Footer() {
                 <div className="h-8 w-8 rounded-lg bg-white border border-slate-200 flex items-center justify-center shrink-0 text-[#2776ea] shadow-sm">
                   <Mail size={16} />
                 </div>
-                <a href="mailto:kontakt@thingsatweb.se" className="text-sm text-slate-500 hover:text-[#2776ea] transition-colors font-medium">
+                <a
+                  href="mailto:kontakt@thingsatweb.se"
+                  className="text-sm text-slate-500 hover:text-[#2776ea] transition-colors font-medium"
+                >
                   kontakt@thingsatweb.se
                 </a>
               </div>
@@ -153,23 +184,22 @@ export default function Footer() {
                 <div className="h-8 w-8 rounded-lg bg-white border border-slate-200 flex items-center justify-center shrink-0 text-[#2776ea] shadow-sm">
                   <Phone size={16} />
                 </div>
-                <a href="tel:+46707770727" className="text-sm text-slate-500 hover:text-[#2776ea] transition-colors font-medium">
+                <a
+                  href="tel:+46707770727"
+                  className="text-sm text-slate-500 hover:text-[#2776ea] transition-colors font-medium"
+                >
                   +46 70 777 07 27
                 </a>
               </div>
             </div>
           </div>
-
         </div>
 
         {/* --- Bottom Bar --- */}
         <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-bold uppercase tracking-widest text-slate-400">
           <p>© {currentYear} ThingsAtWeb AB. All Rights Reserved.</p>
-          <div className="flex gap-6">
-            
-          </div>
+          <div className="flex gap-6"></div>
         </div>
-
       </div>
     </footer>
   );

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarDays } from "lucide-react";
 import { blogData } from "@/data/BlogData";
-import SectionHeader from "@/section/components/home/SectionHeader";
+import SectionHeader from "@/components/common/SectionHeader";
 
 
 export default function BlogSection() {

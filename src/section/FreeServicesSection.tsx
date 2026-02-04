@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import LeadModal from "@/section/components/forms/LeadModal"; // Import the modal
-import SectionHeader from "@/section/components/home/SectionHeader";
+import SectionHeader from "@/components/common/SectionHeader";
 
 
 export default function FreeWebsiteSection() {
@@ -13,7 +13,7 @@ export default function FreeWebsiteSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className="bg-[#FAF7F6] py-[100px] relative font-sora">
+    <section className="bg-[#FAF7F6] py-[60px] relative font-sora">
       <div className="container mx-auto px-[24px] lg:px-[40px]">
           <SectionHeader
                           badge="Free Services"
@@ -78,7 +78,7 @@ export default function FreeWebsiteSection() {
               </button>
 
               <Link
-                href="/services"
+                href="/service"
                 className="inline-flex items-center justify-center gap-[10px] px-[32px] py-[16px] rounded-xl bg-white border border-[#e2e8f0] text-[#0F172A] font-bold text-[16px] transition-all hover:border-[#0F172A]"
               >
                 View Services

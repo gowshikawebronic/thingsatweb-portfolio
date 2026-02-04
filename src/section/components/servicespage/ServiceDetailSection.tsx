@@ -8,7 +8,7 @@ import {
   Megaphone, Target, Search, LineChart, Cpu, Wifi 
 } from "lucide-react";
 import LeadModal from "@/section/components/forms/LeadModal";
-import SectionHeader from "@/section/components/home/SectionHeader";
+import SectionHeader from "@/components/common/SectionHeader";
 import { ServiceDetailType } from "@/data/ServicePage";
 
 const ICON_MAP: Record<string, any> = {

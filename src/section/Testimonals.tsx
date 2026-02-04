@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Star, Quote, CheckCircle2 } from "lucide-react";
-import SectionHeader from "@/section/components/home/SectionHeader";
+import SectionHeader from "@/components/common/SectionHeader";
 
 // Mock Data - You can move this to a separate data file later
 const TESTIMONIALS_DATA = [
