@@ -29,12 +29,14 @@ export default function UniversalRelatedResources({ data }: { data: ServicePageD
               <Link
                 key={index}
                 href={service.href}
-                className="group bg-white px-6 py-4 rounded-2xl border border-slate-200 hover:border-[#2776ea] hover:shadow-lg transition-all duration-300 flex items-center gap-3"
+                // Changed hover:border-[#2776ea] to hover:border-primary-blue
+                className="group bg-white px-6 py-4 rounded-2xl border border-slate-200 hover:border-primary-blue hover:shadow-lg transition-all duration-300 flex items-center gap-3"
               >
                 <div className={`h-8 w-8 rounded-lg ${service.bg} flex items-center justify-center ${service.color}`}>
                   <DynamicIcon name={service.icon} size={16} />
                 </div>
-                <h4 className="text-menu font-bold text-slate-700 group-hover:text-[#2776ea] uppercase tracking-wide">
+                {/* Changed group-hover:text-[#2776ea] to group-hover:text-primary-blue */}
+                <h4 className="text-menu font-bold text-slate-700 group-hover:text-primary-blue uppercase tracking-wide">
                   {service.title}
                 </h4>
               </Link>
@@ -44,12 +46,13 @@ export default function UniversalRelatedResources({ data }: { data: ServicePageD
 
         {/* --- SECTION 2: RESOURCES LINKS --- */}
         <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 border border-slate-200">
-           <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between mb-6">
                 <h3 className="text-h3 font-black text-slate-900">Resources & Documentation</h3>
-                <Link href="/resources" className="text-menu font-bold text-[#2776ea] hover:underline">View All</Link>
-           </div>
-           
-           <div className="grid md:grid-cols-2 gap-8">
+                {/* Changed text-[#2776ea] to text-primary-blue */}
+                <Link href="/resources" className="text-menu font-bold text-primary-blue hover:underline">View All</Link>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
                 {data.columns.map((col, idx) => (
                     <div key={idx}>
                         <h4 className="text-caption font-black uppercase tracking-widest text-slate-400 mb-3 flex items-center gap-2">
@@ -58,8 +61,10 @@ export default function UniversalRelatedResources({ data }: { data: ServicePageD
                         <ul className="space-y-2">
                             {col.items.map((item, i) => (
                                 <li key={i}>
-                                    <Link href={item.href} className="flex items-center gap-2 text-submenu font-medium text-slate-600 hover:text-[#2776ea] group">
-                                        <ArrowRight size={12} className="text-slate-300 group-hover:text-[#2776ea] transition-colors" />
+                                    {/* Changed hover:text-[#2776ea] to hover:text-primary-blue */}
+                                    <Link href={item.href} className="flex items-center gap-2 text-submenu font-medium text-slate-600 hover:text-primary-blue group">
+                                        {/* Changed group-hover:text-[#2776ea] to group-hover:text-primary-blue */}
+                                        <ArrowRight size={12} className="text-slate-300 group-hover:text-primary-blue transition-colors" />
                                         {item.label}
                                     </Link>
                                 </li>
@@ -67,7 +72,7 @@ export default function UniversalRelatedResources({ data }: { data: ServicePageD
                         </ul>
                     </div>
                 ))}
-           </div>
+            </div>
         </div>
 
       </div>

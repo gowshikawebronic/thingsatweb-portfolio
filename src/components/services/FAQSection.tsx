@@ -62,8 +62,8 @@ export default function FAQSection({ data }: FAQSectionProps) {
         key={index}
         className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
           isOpen 
-            ? "bg-slate-50 border-[#2776ea] shadow-lg shadow-blue-900/5" 
-            : "bg-white border-slate-100 hover:border-[#76ea27]"
+            ? "bg-slate-50 border-primary-blue shadow-lg shadow-blue-900/5" 
+            : "bg-white border-slate-100 hover:border-brand-green"
         }`}
       >
         <button
@@ -74,7 +74,7 @@ export default function FAQSection({ data }: FAQSectionProps) {
             {item.question}
           </span>
           <div className={`h-8 w-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${
-            isOpen ? "bg-[#2776ea] text-white" : "bg-slate-100 text-slate-400"
+            isOpen ? "bg-primary-blue text-white" : "bg-slate-100 text-slate-400"
           }`}>
             {isOpen ? <Minus size={16} /> : <Plus size={16} />}
           </div>
@@ -103,15 +103,15 @@ export default function FAQSection({ data }: FAQSectionProps) {
         {/* --- HEADER --- */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-6">
-            <HelpCircle size={14} className="text-[#2776ea]" />
-            <span className="text-[11px] font-black uppercase tracking-[0.3em] text-[#2776ea]">
+            <HelpCircle size={14} className="text-primary-blue" />
+            <span className="text-[11px] font-black uppercase tracking-[0.3em] text-primary-blue">
               {header.badge}
             </span>
           </div>
           
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-[1.1] mb-6">
             {header.title}{" "}
-            <span className="bg-gradient-to-r from-[#2776ea] to-[#76ea27] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary-blue to-brand-green bg-clip-text text-transparent">
               {header.titleHighlight}
             </span>
           </h2>
@@ -139,7 +139,7 @@ export default function FAQSection({ data }: FAQSectionProps) {
         {/* --- CTA BOX --- */}
         <div className="mt-16 text-center">
           <div className="inline-flex flex-col md:flex-row items-center gap-6 bg-slate-900 p-8 rounded-3xl shadow-xl shadow-slate-900/10 mx-auto">
-            <div className="h-12 w-12 rounded-full bg-[#76ea27] flex items-center justify-center text-white shrink-0 animate-pulse">
+            <div className="h-12 w-12 rounded-full bg-brand-green flex items-center justify-center text-white shrink-0 animate-pulse">
               <MessageCircle size={24} />
             </div>
             <div className="text-left">
@@ -152,7 +152,7 @@ export default function FAQSection({ data }: FAQSectionProps) {
             </div>
             <Link 
               href={cta.url || "/contact"} 
-              className="px-6 py-3 rounded-xl bg-white text-slate-900 font-black uppercase tracking-widest text-xs hover:bg-[#2776ea] hover:text-white transition-colors"
+              className="px-6 py-3 rounded-xl bg-white text-slate-900 font-black uppercase tracking-widest text-xs hover:bg-primary-blue hover:text-white transition-colors"
             >
               {cta.buttonText}
             </Link>

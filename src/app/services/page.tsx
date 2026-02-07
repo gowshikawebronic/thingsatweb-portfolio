@@ -73,7 +73,8 @@ const EnquiryModal = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200 font-sora">
       <div className="bg-white rounded-[2rem] w-full max-w-lg p-8 md:p-10 shadow-2xl relative overflow-hidden">
         {/* Modal Background Decor */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-[#2776ea]/10 rounded-bl-full -mr-10 -mt-10" />
+        {/* Changed bg-[#2776ea]/10 to bg-primary-blue/10 */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-primary-blue/10 rounded-bl-full -mr-10 -mt-10" />
 
         <button
           onClick={onClose}
@@ -88,7 +89,8 @@ const EnquiryModal = ({
           </h3>
           <p className="text-slate-500 mb-8 font-medium text-body">
             Inquiring about:{" "}
-            <span className="text-[#2776ea] font-bold">{service.title}</span>
+            {/* Changed text-[#2776ea] to text-primary-blue */}
+            <span className="text-primary-blue font-bold">{service.title}</span>
           </p>
 
           <form className="space-y-5">
@@ -96,9 +98,10 @@ const EnquiryModal = ({
               <label className="block text-caption font-bold uppercase tracking-widest text-slate-400 mb-2">
                 Work Email
               </label>
+              {/* Changed focus:border-[#2776ea] and focus:ring-[#2776ea] to primary-blue */}
               <input
                 type="email"
-                className="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-[#2776ea] focus:ring-1 focus:ring-[#2776ea] font-medium text-body text-slate-800 transition-all"
+                className="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-primary-blue focus:ring-1 focus:ring-primary-blue font-medium text-body text-slate-800 transition-all"
                 placeholder="name@company.com"
               />
             </div>
@@ -106,13 +109,15 @@ const EnquiryModal = ({
               <label className="block text-caption font-bold uppercase tracking-widest text-slate-400 mb-2">
                 Project Details
               </label>
+              {/* Changed focus:border-[#2776ea] and focus:ring-[#2776ea] to primary-blue */}
               <textarea
                 rows={4}
-                className="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-[#2776ea] focus:ring-1 focus:ring-[#2776ea] font-medium text-body text-slate-800 transition-all resize-none"
+                className="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-primary-blue focus:ring-1 focus:ring-primary-blue font-medium text-body text-slate-800 transition-all resize-none"
                 placeholder="Briefly describe your requirements.."
               />
             </div>
-            <button className="w-full py-4 bg-[#2776ea] text-white text-menu font-bold rounded-xl hover:bg-[#1a65d8] transition-all shadow-lg shadow-[#2776ea]/20 active:scale-[0.98]">
+            {/* Changed bg-[#2776ea] to bg-primary-blue, shadow-[#2776ea]/20 to shadow-primary-blue/20, and added hover:bg-primary-blue/90 */}
+            <button className="w-full py-4 bg-primary-blue text-white text-menu font-bold rounded-xl hover:bg-primary-blue/90 transition-all shadow-lg shadow-primary-blue/20 active:scale-[0.98]">
               Request Consultation
             </button>
           </form>
@@ -128,7 +133,8 @@ export default function ServicesPage() {
     useState<ServiceCardData | null>(null);
 
   return (
-    <main className="bg-white min-h-screen font-sora selection:bg-[#2776ea] selection:text-white">
+    // Changed selection:bg-[#2776ea] to selection:bg-primary-blue
+    <main className="bg-white min-h-screen font-sora selection:bg-primary-blue selection:text-white">
       {/* 2. MAIN SERVICES (Vertical Stack - PageServiceCard) */}
       <section className="relative py-24 md:py-32 overflow-hidden border-b border-slate-100">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">

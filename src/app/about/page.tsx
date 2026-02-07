@@ -44,7 +44,7 @@ export default function AboutSection() {
             <h2 className="text-[36px] lg:text-[52px] font-extrabold text-[#0F172A] tracking-tight mb-[24px] leading-[1.1]">
               We offer everything <br />
               you need to <span className="text-[#4F86E8] relative">
-                go digital.
+                go digital
                 {/* Underline svg */}
                 <svg className="absolute -bottom-2 left-0 w-full h-[8px] text-[#4F86E8]/20" viewBox="0 0 100 10" preserveAspectRatio="none">
                     <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
@@ -95,7 +95,7 @@ export default function AboutSection() {
             <div className="mt-auto">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="group inline-flex items-center justify-center gap-[10px] px-[32px] py-[16px] rounded-xl bg-[#0F172A] text-white font-bold text-[16px] transition-all hover:bg-[#4F86E8] hover:shadow-lg hover:shadow-blue-500/20 active:scale-95"
+                className="group inline-flex items-center justify-center gap-[10px] px-[32px] py-[16px] rounded-xl bg-primary-blue text-white font-bold text-[16px] transition-all hover:bg-brand-green hover:shadow-lg hover:shadow-blue-500/20 active:scale-95"
               >
                 Get Started
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />

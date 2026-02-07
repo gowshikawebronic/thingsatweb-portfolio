@@ -14,7 +14,7 @@ export const servicesData = [
     image: "./assets/images/appdev.png",
     href: "/services/app-development",
     icon: Smartphone,
-    description: `We build apps with great UI/UX Design and cross platform support in mind. Our team comprises a bunch of knowledgeable iOS App and Android App Developers having a good skill set in building mobile applications. We expertise in creating Native App, Hybrid App and Web App development.
+    description: `We build apps with great UI/UX Design and cross platform support in mind. Our team comprises a bunch of knowledgeable iOS App and Android App Developers having a good skill set in building mobile applications. We expertise in creating Native App..
 
 `,
   },
@@ -34,7 +34,7 @@ export const servicesData = [
     image: "./assets/images/domain.png",
     href: "/services/domain-hosting",
     icon: Server,
-    description: `With the knowledge of working experience in many of the web servers including Amazon AWS, our team can provide you with the tailor made, cost effective and speedy web hosting solutions. Not all the web servers are going to work the same in terms of speed to server your web pages, that’s where we work for you in scaling the resources.`,
+    description: `With the knowledge of working experience in many of the web servers including Amazon AWS,cost effective and speedy web hosting solutions. Not all the web servers are going to work the same in terms of speed to server your web pages, that’s where we work for you in scaling the resources.`,
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ export const servicesData = [
     image: "./assets/images/seo.png",
     href: "/services/seo",
     icon: Search,
-    description: `Do you wish to see your website at the top of major search engines? We can do it for you. As a digital marketing agency we do keyword research to improve the search engine rankings and also integrate with social media, content marketing, public relations, and conversion rate optimization.
+    description: `Do you wish to see your website at the top of major search engines? We can do it for you. As a digital marketing agency we do keyword research to improve the search engine rankings and also integrate with social media, and conversion rate optimization.
 
 `,
   },
@@ -64,7 +64,6 @@ export const servicesData = [
     icon: Cpu,
     description: `Terms like Internet of things, IoT devices, Industry IoT (IIoT), Industry 4.0, or Smart Factory are becoming more familiar now. With device connected to the internet there comes an opportunity to manage your resources 24/7.
 
-Our experts have vast experience in monitoring the real time data using our own IoT Solutions and can-do predictive maintenance, thereby reducing your cost and timing.
 
 `,
   },

@@ -3,34 +3,56 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarDays } from "lucide-react";
-import { blogData } from "@/data/BlogData";
 import SectionHeader from "@/components/common/SectionHeader";
 
+// Defining the specific blogs for the Home Page here to ensure they link correctly
+const HOME_BLOGS = [
+  {
+    id: "2", // ID from your main data
+    title: "How to monitor water supply from your mobile?",
+    excerpt: "Water pollution is one of the biggest fears for the green globalization. Water pollution affects human health by causing waterborne diseases.",
+    image: "./assets/news/water-supply.png",
+    category: "IoT",
+    date: "Oct 22, 2025",
+    link: "/news/monitor-water-supply", // Redirects to specific blog
+  },
+  {
+    id: "3",
+    title: "How to create a well written and customizable website?",
+    excerpt: "It is difficult as a customer to know if you got a good website or less good, as much is hidden in the code.",
+    image: "./assets/news/custom-website.png",
+    category: "Web Development",
+    date: "Oct 20, 2025",
+    link: "/news/create-customizable-website", // Redirects to specific blog
+  },
+  {
+    id: "4",
+    title: "How to make a user friendly mobile app?",
+    excerpt: "We offer first-class services for mobile app development. In addition to websites, we also develop applications for mobile phones.",
+    image: "./assets/news/user-friendly-app.png",
+    category: "App Development",
+    date: "Oct 18, 2025",
+    link: "/news/user-friendly-mobile-app", // Redirects to specific blog
+  },
+];
 
 export default function BlogSection() {
   return (
     <section className="bg-[#FAF7F6] py-[100px] font-sora relative">
       <div className="container mx-auto px-[24px] lg:px-[40px]">
-         <SectionHeader
-                  badge="Blogs"
-                  title=" News from our Blog"
-                  description="Insights, updates, and technical deep-dives from our team of experts"
-                  centered={true}
-                  className="mb-20"
-                />
-        {/* --- Section Header ---
-        <div className="mb-[60px] text-center max-w-3xl mx-auto">
-          <h2 className="text-[36px] lg:text-[56px] font-extrabold text-[#0F172A] tracking-tight mb-[24px]">
-            News from our Blog
-          </h2>
-          <p className="text-[18px] text-[#475569] font-light leading-relaxed">
-            Insights, updates, and technical deep-dives from our team of experts.
-          </p>
-        </div> */}
+        
+        {/* --- Section Header --- */}
+        <SectionHeader
+          badge="Blogs"
+          title="News from our Blog"
+          description="Insights, updates, and technical deep-dives from our team of experts"
+          centered={true}
+          className="mb-20"
+        />
 
         {/* --- Blog Grid --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[32px] mb-[80px]">
-          {blogData.map((blog) => (
+          {HOME_BLOGS.map((blog) => (
             <article
               key={blog.id}
               className="group flex flex-col bg-white rounded-[32px] border border-[#e2e8f0] shadow-xl shadow-[#0F172A]/5 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#0F172A]/10"
@@ -43,8 +65,9 @@ export default function BlogSection() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                
                 {/* Category Badge */}
-                <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[12px] font-bold uppercase tracking-wider text-[#4F86E8]">
+                <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[12px] font-bold uppercase tracking-wider text-[#4F86E8] shadow-sm">
                   {blog.category}
                 </div>
               </div>
@@ -59,7 +82,9 @@ export default function BlogSection() {
 
                 {/* Title */}
                 <h3 className="text-[22px] font-bold text-[#0F172A] mb-4 leading-tight group-hover:text-[#4F86E8] transition-colors">
-                  {blog.title}
+                  <Link href={blog.link}>
+                    {blog.title}
+                  </Link>
                 </h3>
 
                 {/* Excerpt */}
@@ -85,7 +110,7 @@ export default function BlogSection() {
         {/* --- View All Blogs Button --- */}
         <div className="flex justify-center">
           <Link
-            href="/blog" // Path to your main blog listing page
+            href="/news" // Redirects to the main News Page
             className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#0F172A] px-[40px] py-[18px] text-[16px] font-bold text-white transition-all hover:bg-[#4F86E8] hover:shadow-lg hover:shadow-[#4F86E8]/30 hover:-translate-y-1 active:scale-95"
           >
             Read More Blogs

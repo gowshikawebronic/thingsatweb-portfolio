@@ -128,7 +128,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-[16px] w-full sm:w-auto opacity-0 animate-fade-in-up [animation-delay:600ms] [animation-fill-mode:forwards]">
               <button
                 onClick={() => setOpenModal("consult")}
-                className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#0F172A] px-[32px] py-[16px] text-[16px] font-bold text-white transition-all hover:bg-[#4F86E8] hover:shadow-lg hover:shadow-[#4F86E8]/30 hover:-translate-y-1 active:scale-95"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-primary-blue px-[32px] py-[16px] text-[16px] font-bold text-white transition-all hover:bg-brand-green  hover:-translate-y-1 active:scale-95"
               >
                 Create Free Website
                 <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
@@ -136,7 +136,7 @@ export default function Hero() {
 
               <button
                 onClick={() => setOpenModal("analysis")}
-                className="group inline-flex items-center justify-center gap-3 rounded-full border-2 border-[#e2e8f0] bg-white px-[32px] py-[16px] text-[16px] font-bold text-[#0F172A] transition-all hover:border-[#0F172A] hover:bg-[#fafafa] active:scale-95"
+                className="group inline-flex items-center justify-center gap-3 rounded-full border-2 border-[#e2e8f0] bg-white px-[32px] py-[16px] text-[16px] font-bold text-[#0F172A] transition-all hover:border-brand-green hover:bg-[#fafafa] active:scale-95"
               >
                 <PlayCircle size={20} className="text-[#475569] group-hover:text-[#0F172A] transition-colors" />
                 Free Website Analysis

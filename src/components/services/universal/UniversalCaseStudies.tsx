@@ -40,7 +40,8 @@ export default function UniversalCaseStudies({ data }: { data: ServicePageData['
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 style={{ top: stickyTop }} 
-                className="sticky group bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-xl hover:shadow-blue-900/10 transition-shadow duration-500 flex flex-col lg:flex-row"
+                // Changed hover:shadow-blue-900/10 to hover:shadow-primary-blue/10
+                className="sticky group bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-xl hover:shadow-primary-blue/10 transition-shadow duration-500 flex flex-col lg:flex-row"
               >
                 
                 {/* --- LEFT: NARRATIVE (Compacted) --- */}
@@ -48,7 +49,8 @@ export default function UniversalCaseStudies({ data }: { data: ServicePageData['
                     
                     {/* Meta Header */}
                     <div className="flex items-center gap-3 mb-4">
-                        <div className={`p-2 rounded-xl bg-slate-50 border border-slate-100 ${study.color} text-[#2776ea]`}>
+                        {/* Changed text-[#2776ea] to text-primary-blue */}
+                        <div className={`p-2 rounded-xl bg-slate-50 border border-slate-100 ${study.color} text-primary-blue`}>
                             <DynamicIcon name={study.icon} size={18} />
                         </div>
                         <div>
@@ -75,7 +77,8 @@ export default function UniversalCaseStudies({ data }: { data: ServicePageData['
                             </p>
                         </div>
                         <div>
-                            <h4 className="text-caption font-black uppercase tracking-wide text-[#76ea27]/90 mb-1">The Solution</h4>
+                            {/* Changed text-[#76ea27]/90 to text-brand-green/90 */}
+                            <h4 className="text-caption font-black uppercase tracking-wide text-brand-green/90 mb-1">The Solution</h4>
                             <p className="text-caption font-medium text-slate-500 leading-relaxed line-clamp-3">
                                 {study.solution}
                             </p>
@@ -100,8 +103,9 @@ export default function UniversalCaseStudies({ data }: { data: ServicePageData['
                         <div className="space-y-3 mb-6">
                             {study.results.map((res, i) => (
                               <div key={i} className="flex items-end justify-between border-b border-slate-200/60 pb-2 last:border-0">
-                                 <span className="text-caption font-bold text-slate-500 uppercase tracking-widest">{res.label}</span>
-                                 <span className="text-h2 font-black text-[#2776ea]">{res.value}</span>
+                                  <span className="text-caption font-bold text-slate-500 uppercase tracking-widest">{res.label}</span>
+                                  {/* Changed text-[#2776ea] to text-primary-blue */}
+                                  <span className="text-h2 font-black text-primary-blue">{res.value}</span>
                               </div>
                             ))}
                         </div>
@@ -113,7 +117,8 @@ export default function UniversalCaseStudies({ data }: { data: ServicePageData['
                                 "{study.quote}"
                             </p>
                             <div className="flex items-center gap-2">
-                                <div className="h-px w-4 bg-[#2776ea]" />
+                                {/* Changed bg-[#2776ea] to bg-primary-blue */}
+                                <div className="h-px w-4 bg-primary-blue" />
                                 <span className="text-caption font-black text-slate-900 uppercase tracking-wider">
                                     {study.author}
                                 </span>
@@ -121,7 +126,8 @@ export default function UniversalCaseStudies({ data }: { data: ServicePageData['
                         </div>
                         
                         {/* Action Button (Slim) */}
-                        <button className="w-full py-3 rounded-lg bg-[#2776ea] text-white text-caption font-bold uppercase tracking-widest hover:bg-[#2776ea]/70 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 group/btn">
+                        {/* Changed bg-[#2776ea] to bg-primary-blue and hover:bg-[#2776ea]/70 to hover:bg-primary-blue/70 */}
+                        <button className="w-full py-3 rounded-lg bg-primary-blue text-white text-caption font-bold uppercase tracking-widest hover:bg-primary-blue/70 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 group/btn">
                             Full Case Study 
                             <ArrowUpRight size={14} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                         </button>

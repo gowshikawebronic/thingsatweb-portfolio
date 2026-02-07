@@ -5,9 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Check, X, Layers, MessageSquare, ArrowUpRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import { DynamicIcon } from "@/components/common/DynamicIcon"; // Make sure you have this component created
+import { DynamicIcon } from "@/components/common/DynamicIcon"; 
 
-// 1. DEFINE THE NEW TYPE HERE (Instead of importing the old 'Service')
+// 1. DEFINE THE NEW TYPE HERE
 export interface ServiceCardData {
   id: string;
   title: string;
@@ -21,9 +21,9 @@ export interface ServiceCardData {
 }
 
 interface PageServiceCardProps {
-  service: ServiceCardData; // Use the new type
+  service: ServiceCardData;
   index: number;
-  onCtaClick: (service: ServiceCardData) => void; // Update callback type
+  onCtaClick: (service: ServiceCardData) => void;
   reversed?: boolean;
 }
 
@@ -50,7 +50,8 @@ export const PageServiceCard = ({
         >
           {/* Header */}
           <div className="flex items-center gap-4 mb-6">
-            <div className="h-14 w-14 flex items-center justify-center rounded-2xl bg-white border border-slate-100 text-[#2776ea] shadow-sm transition-transform duration-500 group-hover:scale-105">
+            {/* Changed text-[#2776ea] to text-primary-blue */}
+            <div className="h-14 w-14 flex items-center justify-center rounded-2xl bg-white border border-slate-100 text-primary-blue shadow-sm transition-transform duration-500 group-hover:scale-105">
               {service.localIcon ? (
                 <div
                   className="h-7 w-7 bg-current
@@ -72,7 +73,8 @@ export const PageServiceCard = ({
           </div>
 
           {/* Title & Description */}
-          <h3 className="text-h1 font-bold text-slate-900 mb-6 group-hover:text-[#2776ea] transition-colors tracking-tight">
+          {/* Changed group-hover:text-[#2776ea] to group-hover:text-primary-blue */}
+          <h3 className="text-h1 font-bold text-slate-900 mb-6 group-hover:text-primary-blue transition-colors tracking-tight">
             {service.title}
           </h3>
           <p className="text-slate-500 font-medium leading-loose mb-8 max-w-xl text-body">
@@ -83,8 +85,10 @@ export const PageServiceCard = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
             {service.points.slice(0, 4).map((point, idx) => (
               <div key={idx} className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#76ea27]/20 flex items-center justify-center mt-1">
-                  <Check size={12} className="text-[#5eb820]" strokeWidth={4} />
+                {/* Changed bg-[#76ea27]/20 to bg-brand-green/20 */}
+                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-green flex items-center justify-center mt-1">
+                  {/* Changed text-[#5eb820] to text-brand-green */}
+                  <Check size={12} className="text-brand-green" strokeWidth={4} />
                 </div>
                 <span className="text-submenu font-semibold text-slate-600">
                   {point}
@@ -96,9 +100,10 @@ export const PageServiceCard = ({
           {/* --- ACTION ROW --- */}
           <div className="flex flex-wrap items-center gap-4">
             {/* 1. Start Project */}
+            {/* Changed bg-[#2776ea] to bg-primary-blue, hover to opacity modifier */}
             <button
               onClick={() => onCtaClick(service)}
-              className="flex items-center gap-2 pl-6 pr-2 py-2 rounded-full bg-[#2776ea] text-white font-bold text-menu uppercase tracking-widest hover:bg-[#1a5bbd] transition-colors shadow-md shadow-slate-200"
+              className="flex items-center gap-2 pl-6 pr-2 py-2 rounded-full bg-primary-blue text-white font-bold text-menu uppercase tracking-widest hover:bg-brand-green transition-colors shadow-md shadow-slate-200"
             >
               Start Project
               <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center">
@@ -107,9 +112,10 @@ export const PageServiceCard = ({
             </button>
 
             {/* 2. Explore */}
+            {/* Changed bg-[#76ea27] to bg-brand-green, hover to opacity modifier */}
             <Link
               href={serviceUrl}
-              className="flex items-center gap-2 pl-6 pr-2 py-2 rounded-full bg-[#76ea27] text-slate-900 font-bold text-menu uppercase tracking-widest hover:bg-[#6bd622] transition-colors shadow-md shadow-slate-200"
+              className="flex items-center gap-2 pl-6 pr-2 py-2 rounded-full  text-slate-900 font-bold text-menu uppercase tracking-widest  transition-colors shadow-md shadow-slate-200"
             >
               Explore
               <div className="w-8 h-8 bg-black/5 rounded-full flex items-center justify-center">
@@ -118,9 +124,10 @@ export const PageServiceCard = ({
             </Link>
 
             {/* 3. The Toggle Pill */}
+            {/* Changed border hover and text hover to primary-blue */}
             <div
               onClick={() => setShowStack(!showStack)}
-              className="flex items-center gap-3 pl-2 pr-5 py-1.5 rounded-full border border-slate-200 bg-white cursor-pointer hover:border-[#2776ea] hover:shadow-md transition-all group/toggle ml-0 sm:ml-2"
+              className="flex items-center gap-3 pl-2 pr-5 py-1.5 rounded-full border border-slate-200 bg-white cursor-pointer hover:border-primary-blue hover:shadow-md transition-all group/toggle ml-0 sm:ml-2"
             >
               <div className="flex -space-x-2">
                 {service.technologies.slice(0, 3).map((t, i) => (
@@ -138,12 +145,13 @@ export const PageServiceCard = ({
               </div>
 
               <div className="flex items-center gap-2">
-                <span className="text-caption font-bold uppercase tracking-widest text-slate-500 group-hover/toggle:text-[#2776ea] transition-colors">
+                {/* Changed group-hover/toggle:text to primary-blue */}
+                <span className="text-caption font-bold uppercase tracking-widest text-slate-500 group-hover/toggle:text-primary-blue transition-colors">
                   {showStack ? "Close" : "Stack"}
                 </span>
                 <Layers
                   size={14}
-                  className="text-slate-400 group-hover/toggle:text-[#2776ea]"
+                  className="text-slate-400 group-hover/toggle:text-primary-blue"
                 />
               </div>
             </div>
@@ -188,7 +196,8 @@ export const PageServiceCard = ({
                       {service.technologies.map((t) => (
                         <div
                           key={t.name}
-                          className="flex flex-col items-center justify-center p-4 bg-white rounded-2xl border border-slate-100/80 shadow-sm hover:border-[#2776ea]/30 hover:shadow-md transition-all duration-300 group/tech cursor-default"
+                          // Changed hover:border to primary-blue/30
+                          className="flex flex-col items-center justify-center p-4 bg-white rounded-2xl border border-slate-100/80 shadow-sm hover:border-primary-blue/30 hover:shadow-md transition-all duration-300 group/tech cursor-default"
                         >
                           <div className="w-9 h-9 mb-2 relative">
                             <img
@@ -197,7 +206,8 @@ export const PageServiceCard = ({
                               className="object-contain w-full h-full"
                             />
                           </div>
-                          <span className="text-caption font-bold text-slate-500 uppercase tracking-wide group-hover/tech:text-[#2776ea] text-center transition-colors">
+                          {/* Changed group-hover/tech:text to primary-blue */}
+                          <span className="text-caption font-bold text-slate-500 uppercase tracking-wide group-hover/tech:text-primary-blue text-center transition-colors">
                             {t.name}
                           </span>
                         </div>

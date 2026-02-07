@@ -39,15 +39,21 @@ export default function UniversalProcess({ data }: { data: ServicePageData['proc
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 style={{ top: stickyTop }}
-                className="sticky group bg-white rounded-3xl border border-slate-200 p-1 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500"
+                // Changed hover:shadow-blue-900/5 to hover:shadow-primary-blue/5
+                className="sticky group bg-white rounded-3xl border border-slate-200 p-1 shadow-sm hover:shadow-xl hover:shadow-primary-blue/5 transition-all duration-500"
               >
+                
+
+
+
                 
                 <div className="flex flex-col md:flex-row gap-6 p-6 md:p-8 bg-slate-50/50 rounded-[1.25rem] border border-slate-100/50 h-full">
                     
                     {/* --- LEFT: STEP INDICATOR --- */}
                     <div className="flex flex-row md:flex-col items-center gap-4 md:w-20 shrink-0">
                         {/* Number */}
-                        <span className="text-h1 font-black text-slate-200 group-hover:text-[#2776ea]/20 transition-colors">
+                        {/* Changed group-hover:text-[#2776ea]/20 to group-hover:text-primary-blue/20 */}
+                        <span className="text-h1 font-black text-slate-200 group-hover:text-primary-blue/20 transition-colors">
                             0{index + 1}
                         </span>
                         
@@ -72,8 +78,10 @@ export default function UniversalProcess({ data }: { data: ServicePageData['proc
                         {/* Objectives Grid */}
                         <ul className="grid sm:grid-cols-2 gap-3">
                             {phase.objectives.map((item, i) => (
-                                <li key={i} className="flex items-start gap-2.5 text-caption font-semibold text-slate-600 bg-white p-3 rounded-xl border border-slate-100 shadow-sm group-hover:border-[#2776ea]/10 transition-colors">
-                                    <div className="mt-0.5 w-4 h-4 rounded-full bg-[#2776ea]/10 flex items-center justify-center shrink-0 text-[#2776ea]">
+                                // Changed group-hover:border-[#2776ea]/10 to group-hover:border-primary-blue/10
+                                <li key={i} className="flex items-start gap-2.5 text-caption font-semibold text-slate-600 bg-white p-3 rounded-xl border border-slate-100 shadow-sm group-hover:border-primary-blue/10 transition-colors">
+                                    {/* Changed bg-[#2776ea]/10 and text-[#2776ea] to primary-blue */}
+                                    <div className="mt-0.5 w-4 h-4 rounded-full bg-primary-blue/10 flex items-center justify-center shrink-0 text-primary-blue">
                                         <Check size={8} strokeWidth={4} />
                                     </div>
                                     <span className="leading-relaxed">{item}</span>

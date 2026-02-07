@@ -15,11 +15,11 @@ export default function FeaturedServices({ services, onCardClick }: FeaturedServ
         
         {/* Section Header */}
         <div className="mb-16 md:mb-24">
-          <span className="text-[#2776ea] font-bold tracking-widest uppercase text-xs mb-3 block">
+          <span className="text-primary-blue font-bold tracking-widest uppercase text-xs mb-3 block">
             Core Capabilities
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-6">
-            Digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2776ea] to-cyan-500">Powerhouse</span>
+            Digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-cyan-500">Powerhouse</span>
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl leading-relaxed">
             Our primary domains of expertise, engineered to drive enterprise-grade transformation.
@@ -39,17 +39,17 @@ export default function FeaturedServices({ services, onCardClick }: FeaturedServ
 
               {/* Icon & Tag */}
               <div className="flex justify-between items-start mb-8 relative z-10">
-                <div className="h-16 w-16 rounded-2xl bg-[#2776ea]/5 text-[#2776ea] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#2776ea] group-hover:text-white transition-all duration-500">
+                <div className="h-16 w-16 rounded-2xl bg-[#2776ea]/5 text-primary-blue flex items-center justify-center group-hover:scale-110 group-hover:bg-primary-blue group-hover:text-white transition-all duration-500">
                   <DynamicIcon name={service.icon} size={32} />
                 </div>
-                <span className="px-4 py-1.5 rounded-full border border-slate-100 bg-slate-50 text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:bg-white group-hover:text-[#2776ea] transition-colors">
+                <span className="px-4 py-1.5 rounded-full border border-slate-100 bg-slate-50 text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:bg-white group-hover:text-primary-blue transition-colors">
                   {service.tagline}
                 </span>
               </div>
 
               {/* Content */}
               <div className="relative z-10 flex-grow">
-                <h3 className="text-3xl font-black text-slate-900 mb-4 group-hover:text-[#2776ea] transition-colors">
+                <h3 className="text-3xl font-black text-slate-900 mb-4 group-hover:text-primary-blue transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-slate-500 font-medium leading-relaxed mb-8 line-clamp-3">
@@ -60,7 +60,7 @@ export default function FeaturedServices({ services, onCardClick }: FeaturedServ
                 <div className="space-y-3 mb-8">
                   {service.points.slice(0, 3).map((point, i) => (
                     <div key={i} className="flex items-center gap-3">
-                      <div className="h-1.5 w-1.5 rounded-full bg-[#76ea27]" />
+                      <div className="h-1.5 w-1.5 rounded-full bg-brand-green" />
                       <span className="text-sm font-bold text-slate-600">{point}</span>
                     </div>
                   ))}
@@ -68,7 +68,7 @@ export default function FeaturedServices({ services, onCardClick }: FeaturedServ
               </div>
 
               {/* Bottom Action */}
-              <div className="relative z-10 mt-auto pt-8 border-t border-slate-100 flex items-center gap-2 text-[#2776ea] font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
+              <div className="relative z-10 mt-auto pt-8 border-t border-slate-100 flex items-center gap-2 text-primary-blue font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
                 <span>Explore Solution</span>
                 <ArrowRight size={16} />
               </div>

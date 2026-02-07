@@ -13,7 +13,7 @@ export default function ServicesSection() {
         <SectionHeader
           badge="Our Services"
           title="What We Build"
-          description="Scroll down to explore our solutions. We stack value upon value to help you grow."
+          description="Scroll down to explore our solutions, We stack value upon value to help you grow"
           centered={true}
           className="mb-12 lg:mb-20"
         />
@@ -54,8 +54,8 @@ export default function ServicesSection() {
                 <div className="relative flex flex-col lg:flex-row bg-white rounded-[24px] lg:rounded-[32px] border border-[#e2e8f0]  overflow-hidden min-h-[450px] lg:h-[60vh] max-h-[650px] transition-all duration-500 ease-out hover:-translate-y-1">
                   {/* --- Left Content --- */}
                   <div className="flex-1 p-8 lg:p-[60px] flex flex-col justify-center">
-                    <div className="w-fit px-3 py-1 bg-slate-50 rounded-full text-[#4F86E8] text-[11px] lg:text-[12px] font-bold uppercase tracking-wider mb-6">
-                      {index + 1 < 10 ? `0${index + 1}` : index + 1} •{" "}
+                    <div className="w-fit px-3 py-1  rounded-full text-brand-green text-[11px] lg:text-[12px] font-bold uppercase tracking-wider mb-6">
+                      {index + 1 < 10 ? `0${index + 1}` : index + 1} {" "}
                       {service.title}
                     </div>
 

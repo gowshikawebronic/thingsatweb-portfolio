@@ -34,8 +34,8 @@ export default function SectionHeader({
   // Light Mode: A very subtle blue tint background with dark blue text.
   // Dark Mode: A translucent dark background with bright green text for pop.
   const badgeClass = isWhite
-    ? ""
-    : "";
+    ? "text-primary-blue"
+    : "text-primary-blue";
 
   // Size Logic
   const titleSize = size === "large" 

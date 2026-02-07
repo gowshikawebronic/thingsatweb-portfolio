@@ -31,15 +31,20 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
           {services.map((service) => (
             <Link
               key={service.id}
-              href={`/services?category=${service.id}`}
-              className="group relative h-full bg-slate-50 rounded-[2rem] border border-slate-100 p-8 overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white hover:border-[#2776ea]/20 flex flex-col"
+              href={`/service?category=${service.id}`}
+              // Changed hover:shadow-blue-900/10 to hover:shadow-primary-blue/10
+              // Changed hover:border-[#2776ea]/20 to hover:border-primary-blue/20
+              className="group relative h-full bg-slate-50 rounded-[2rem] border border-slate-100 p-8 overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-blue/10 hover:bg-white hover:border-primary-blue/20 flex flex-col"
             >
               {/* Hover Gradient Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-[#2776ea]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              {/* Changed to-[#2776ea]/5 to to-primary-blue/5 */}
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Top Row: Icon & Arrow */}
               <div className="flex justify-between items-start mb-8 relative z-10">
-                <div className="h-14 w-14 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center text-[#2776ea] group-hover:scale-110 group-hover:bg-[#2776ea] group-hover:text-white transition-all duration-500">
+                {/* Changed text-[#2776ea] to text-primary-blue */}
+                {/* Changed group-hover:bg-[#2776ea] to group-hover:bg-primary-blue */}
+                <div className="h-14 w-14 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center text-primary-blue group-hover:scale-110 group-hover:bg-primary-blue group-hover:text-white transition-all duration-500">
                   <div
                     className="h-7 w-7 bg-current
       [mask-repeat:no-repeat] [mask-position:center] [mask-size:contain]
@@ -52,14 +57,16 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
                 </div>
 
                 {/* Arrow Icon */}
-                <div className="h-10 w-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-[#2776ea] group-hover:text-[#2776ea] group-hover:rotate-45 transition-all duration-300">
+                {/* Changed group-hover:border-[#2776ea] and text-[#2776ea] to primary-blue */}
+                <div className="h-10 w-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-primary-blue group-hover:text-primary-blue group-hover:rotate-45 transition-all duration-300">
                   <ArrowUpRight size={18} />
                 </div>
               </div>
 
               {/* Content */}
               <div className="relative z-10 flex-grow">
-                <h3 className="text-h3 font-bold text-slate-900 mb-3 group-hover:text-[#2776ea] transition-colors">
+                {/* Changed group-hover:text-[#2776ea] to group-hover:text-primary-blue */}
+                <h3 className="text-h3 font-bold text-slate-900 mb-3 group-hover:text-primary-blue transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-body font-medium text-slate-500 leading-relaxed mb-6 line-clamp-3">
@@ -73,7 +80,8 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
                   {service.technologies.slice(0, 3).map((tech, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-caption font-bold text-slate-500 uppercase tracking-wide group-hover:border-[#2776ea]/30 group-hover:text-[#2776ea] transition-colors"
+                      // Changed group-hover:border-[#2776ea]/30 and text-[#2776ea] to primary-blue
+                      className="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-caption font-bold text-slate-500 uppercase tracking-wide group-hover:border-primary-blue/30 group-hover:text-primary-blue transition-colors"
                     >
                       {tech.name}
                     </span>
@@ -87,7 +95,8 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
               </div>
 
               {/* Decorative "Sparkle" on Hover */}
-              <div className="absolute -bottom-4 -right-4 text-[#2776ea]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-150 pointer-events-none">
+              {/* Changed text-[#2776ea]/10 to text-primary-blue/10 */}
+              <div className="absolute -bottom-4 -right-4 text-primary-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-150 pointer-events-none">
                 <Sparkles size={120} strokeWidth={0.5} />
               </div>
             </Link>

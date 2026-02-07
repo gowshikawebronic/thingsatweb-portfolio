@@ -23,11 +23,19 @@ export default function UniversalGetStarted({ data }: { data: ServicePageData['g
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {data.cards.map((card, index) => {
             const isAccent = card.theme === "dark"; 
-            const accentColor = isAccent ? "text-[#76ea27]" : "text-[#2776ea]";
-            const btnColor = isAccent ? "bg-[#76ea27] hover:bg-[#529438]" : "bg-[#2776ea] hover:bg-[#3b6499]";
+            
+            // --- UPDATED COLOR LOGIC ---
+            // Replaced hex codes with brand-green and primary-blue
+            const accentColor = isAccent ? "text-brand-green" : "text-primary-blue";
+            
+            // Updated hover states to use opacity modifiers (/90) instead of hardcoded hexes
+            const btnColor = isAccent 
+              ? "bg-brand-green hover:bg-brand-green/90" 
+              : "bg-primary-blue hover:bg-primary-blue/90";
 
             return (
-              <div key={index} className="flex flex-col rounded-3xl p-8 bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300 group">
+              // Updated hover:shadow-blue-900/5 to hover:shadow-primary-blue/5
+              <div key={index} className="flex flex-col rounded-3xl p-8 bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-primary-blue/5 transition-all duration-300 group">
                 
                 <div className={`h-12 w-12 rounded-xl flex items-center justify-center mb-6 bg-white border border-slate-100 shadow-sm ${accentColor}`}>
                     <DynamicIcon name={card.icon} size={24} />

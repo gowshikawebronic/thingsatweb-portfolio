@@ -39,7 +39,8 @@ export default function UniversalOverview({ data }: { data: ServicePageData['ove
               )}
 
               {data.content.length > 2 && (
-                <button onClick={() => setIsExpanded(!isExpanded)} className="group flex items-center gap-2 text-menu font-bold text-[#2776ea] hover:text-[#1a5bbd] transition-colors mt-4 outline-none uppercase tracking-wider">
+                // Changed text-[#2776ea] and hover:text-[#1a5bbd] to primary-blue
+                <button onClick={() => setIsExpanded(!isExpanded)} className="group flex items-center gap-2 text-menu font-bold text-primary-blue hover:text-primary-blue/80 transition-colors mt-4 outline-none uppercase tracking-wider">
                   {isExpanded ? <>Read Less <ChevronUp size={14} /></> : <>Read More <ChevronDown size={14} /></>}
                 </button>
               )}
@@ -52,7 +53,8 @@ export default function UniversalOverview({ data }: { data: ServicePageData['ove
             <div className="bg-slate-50 rounded-3xl p-6 lg:p-8 border border-slate-100">
               
               <div className="flex items-center gap-4 mb-8">
-                <div className="h-10 w-10 rounded-xl bg-white border border-slate-100 flex items-center justify-center text-[#76ea27] shadow-sm">
+                {/* Changed text-[#76ea27] to text-brand-green */}
+                <div className="h-10 w-10 rounded-xl bg-white border border-slate-100 flex items-center justify-center text-brand-green shadow-sm">
                   <Award size={20} />
                 </div>
                 <div>
@@ -64,7 +66,8 @@ export default function UniversalOverview({ data }: { data: ServicePageData['ove
               <div className="space-y-4">
                 {data.differentiators.map((item, index) => (
                   <div key={index} className="flex gap-4 p-4 rounded-2xl bg-white border border-slate-100 shadow-sm transition-transform hover:-translate-y-1 duration-300">
-                    <div className="mt-1 h-8 w-8 rounded-lg bg-slate-50 flex items-center justify-center text-[#2776ea] shrink-0">
+                    {/* Changed text-[#2776ea] to text-primary-blue */}
+                    <div className="mt-1 h-8 w-8 rounded-lg bg-slate-50 flex items-center justify-center text-primary-blue shrink-0">
                       <DynamicIcon name={item.icon} size={16} />
                     </div>
                     <div>

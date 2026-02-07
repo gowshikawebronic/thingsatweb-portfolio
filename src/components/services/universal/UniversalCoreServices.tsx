@@ -25,7 +25,8 @@ export default function UniversalCoreServices({ data }: { data: ServicePageData[
         {/* CARDS GRID (Cleaner, uniform height) */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {data.cards.map((card, index) => (
-            <div key={index} className={`group p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300 relative overflow-hidden flex flex-col h-full hover:-translate-y-1 ${card.span || ""}`}>
+            // Changed hover:shadow-blue-900/5 to hover:shadow-primary-blue/5
+            <div key={index} className={`group p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-primary-blue/5 transition-all duration-300 relative overflow-hidden flex flex-col h-full hover:-translate-y-1 ${card.span || ""}`}>
               
               {/* Subtle Top Line */}
               <div className={`absolute top-0 left-0 w-full h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${card.bg?.replace("/10", "")}`} />
@@ -40,7 +41,8 @@ export default function UniversalCoreServices({ data }: { data: ServicePageData[
                 </div>
               </div>
 
-              <h3 className="text-h3 font-black text-slate-900 mb-3 group-hover:text-[#2776ea] transition-colors">
+              {/* Changed group-hover:text-[#2776ea] to group-hover:text-primary-blue */}
+              <h3 className="text-h3 font-black text-slate-900 mb-3 group-hover:text-primary-blue transition-colors">
                 {card.title}
               </h3>
 
@@ -52,7 +54,8 @@ export default function UniversalCoreServices({ data }: { data: ServicePageData[
                 <ul className="space-y-2 pt-4 border-t border-slate-50 mt-auto">
                   {card.list.map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-caption font-bold text-slate-600">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#76ea27] shrink-0" />
+                      {/* Changed bg-[#76ea27] to bg-brand-green */}
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-brand-green shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -62,7 +65,8 @@ export default function UniversalCoreServices({ data }: { data: ServicePageData[
               {card.tags && (
                 <div className="flex flex-wrap gap-2 mt-auto pt-4">
                   {card.tags.map((tag, i) => (
-                    <span key={i} className="px-2.5 py-1 bg-slate-50 border border-slate-100 rounded-md text-caption font-bold text-slate-500 uppercase tracking-wide group-hover:border-[#2776ea]/20 group-hover:text-[#2776ea] transition-colors">
+                    // Changed group-hover:border-[#2776ea]/20 and text-[#2776ea] to primary-blue
+                    <span key={i} className="px-2.5 py-1 bg-slate-50 border border-slate-100 rounded-md text-caption font-bold text-slate-500 uppercase tracking-wide group-hover:border-primary-blue/20 group-hover:text-primary-blue transition-colors">
                       {tag}
                     </span>
                   ))}
@@ -76,7 +80,8 @@ export default function UniversalCoreServices({ data }: { data: ServicePageData[
         <div className="grid lg:grid-cols-2 gap-6">
             {/* Left Block */}
             <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm flex items-center gap-6">
-                <div className="h-12 w-12 rounded-full bg-[#76ea27]/10 flex items-center justify-center text-[#76ea27] shrink-0">
+                {/* Changed bg-[#76ea27]/10 and text-[#76ea27] to brand-green */}
+                <div className="h-12 w-12 rounded-full bg-brand-green/10 flex items-center justify-center text-brand-green shrink-0">
                     <Clock size={24} />
                 </div>
                 <div>
@@ -87,7 +92,8 @@ export default function UniversalCoreServices({ data }: { data: ServicePageData[
 
             {/* Right Block */}
             <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm flex items-center gap-6">
-                <div className="h-12 w-12 rounded-full bg-[#2776ea]/10 flex items-center justify-center text-[#2776ea] shrink-0">
+                {/* Changed bg-[#2776ea]/10 and text-[#2776ea] to primary-blue */}
+                <div className="h-12 w-12 rounded-full bg-primary-blue/10 flex items-center justify-center text-primary-blue shrink-0">
                     <Cpu size={24} />
                 </div>
                 <div className="flex-1">

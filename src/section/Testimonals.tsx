@@ -46,7 +46,7 @@ export default function Testimonials() {
         <SectionHeader
           badge="Success Stories"
           title="What Our Clients Say"
-          description="We don't just deliver code; we deliver value. Hear from the partners who trust us with their vision."
+          description="We don't just deliver code; we deliver value. Hear from the partners who trust us with their vision"
           centered={true}
           className="mb-20"
         />
@@ -115,9 +115,7 @@ export default function Testimonials() {
 
         {/* --- Trust Indicator / CTA --- */}
         <div className="mt-20 text-center">
-          <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6">
-            Trusted by innovators across industries
-          </p>
+         
           
         </div>
       </div>

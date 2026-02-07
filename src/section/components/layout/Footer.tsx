@@ -17,7 +17,7 @@ export default function Footer() {
 
   return (
     // Changed to bg-slate-50 for a subtle light theme
-    <footer className="bg-[#FAF7F6] text-slate-600 font-sora pt-24 pb-12 relative overflow-hidden border-t border-slate-200">
+    <footer className=" text-slate-600 font-sora pt-24 pb-12 relative overflow-hidden  border-slate-200">
       {/* Background Decor (Subtle Blue Fade) */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(39,118,234,0.03)_0%,transparent_70%)] rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none" />
 

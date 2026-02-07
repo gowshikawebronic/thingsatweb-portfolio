@@ -40,18 +40,20 @@ export default function UniversalFAQ({ data }: { data: ServicePageData['faq'] })
                   className="w-full text-left py-6 flex items-start gap-4 focus:outline-none cursor-pointer hover:bg-slate-50/50 transition-colors px-2 -mx-2 rounded-lg"
                 >
                   {/* Icon Toggle (Small & Subtle) */}
+                  {/* Changed bg-[#2776ea] to bg-primary-blue */}
                   <div className={`shrink-0 w-6 h-6 mt-1 rounded-full flex items-center justify-center transition-all duration-300 ${
                     isOpen 
-                      ? "bg-[#2776ea] text-white rotate-180" 
-                      : "bg-slate-100 text-slate-400 group-hover:bg-[#2776ea]/10 group-hover:text-[#2776ea]"
+                      ? "bg-primary-blue text-white rotate-180" 
+                      : "bg-slate-100 text-slate-400 group-hover:bg-primary-blue/10 group-hover:text-primary-blue"
                   }`}>
                     {isOpen ? <Minus size={14} /> : <Plus size={14} />}
                   </div>
 
                   <div className="flex-1">
                     {/* Question */}
+                    {/* Changed text-[#2776ea] to text-primary-blue */}
                     <h3 className={`text-h3 font-bold leading-relaxed transition-colors duration-300 ${
-                      isOpen ? "text-[#2776ea]" : "text-slate-900 group-hover:text-slate-700"
+                      isOpen ? "text-primary-blue" : "text-slate-900 group-hover:text-slate-700"
                     }`}>
                       {item.question}
                     </h3>
@@ -75,9 +77,10 @@ export default function UniversalFAQ({ data }: { data: ServicePageData['faq'] })
 
         {/* BOTTOM CTA (Compact) */}
         <div className="mt-12 text-center">
+           {/* Changed hover:text-[#2776ea] to hover:text-primary-blue */}
            <a 
              href="/contact" 
-             className="inline-flex items-center gap-2 text-menu font-bold uppercase tracking-widest text-slate-400 hover:text-[#2776ea] transition-colors"
+             className="inline-flex items-center gap-2 text-menu font-bold uppercase tracking-widest text-slate-400 hover:text-primary-blue transition-colors"
            >
              <MessageCircle size={14} />
              <span>Still have questions? Contact Support</span>

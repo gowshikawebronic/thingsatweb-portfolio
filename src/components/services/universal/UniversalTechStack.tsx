@@ -22,16 +22,19 @@ export default function UniversalTechStack({ data }: { data: ServicePageData['te
         <div className="grid md:grid-cols-3 gap-8">
           
           {/* 1. Frameworks */}
-          <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300">
+          {/* Changed hover:shadow-blue-900/5 to hover:shadow-primary-blue/5 */}
+          <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-primary-blue/5 transition-all duration-300">
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-10 w-10 rounded-xl bg-[#2776ea]/10 flex items-center justify-center text-[#2776ea]">
+              {/* Changed bg-[#2776ea]/10 and text-[#2776ea] to primary-blue */}
+              <div className="h-10 w-10 rounded-xl bg-primary-blue/10 flex items-center justify-center text-primary-blue">
                 <Code2 size={20} />
               </div>
               <h3 className="text-h3 font-black text-slate-900">Frameworks</h3>
             </div>
             <div className="space-y-4">
               {data.frameworks.map((item, i) => (
-                <div key={i} className="border-l-2 border-slate-200 pl-4 py-1 hover:border-[#2776ea] transition-colors">
+                // Changed hover:border-[#2776ea] to hover:border-primary-blue
+                <div key={i} className="border-l-2 border-slate-200 pl-4 py-1 hover:border-primary-blue transition-colors">
                   <h4 className="text-submenu font-bold text-slate-900 mb-0.5">{item.name}</h4>
                   <p className="text-caption font-medium text-slate-500">{item.desc}</p>
                 </div>
@@ -40,9 +43,10 @@ export default function UniversalTechStack({ data }: { data: ServicePageData['te
           </div>
 
           {/* 2. Intelligence (LLMs & MLOps) */}
-          <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300">
+          <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-primary-blue/5 transition-all duration-300">
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-10 w-10 rounded-xl bg-[#76ea27]/10 flex items-center justify-center text-[#76ea27]">
+              {/* Changed bg-[#76ea27]/10 and text-[#76ea27] to brand-green */}
+              <div className="h-10 w-10 rounded-xl bg-brand-green/10 flex items-center justify-center text-brand-green">
                 <Bot size={20} />
               </div>
               <h3 className="text-h3 font-black text-slate-900">Intelligence</h3>
@@ -55,7 +59,8 @@ export default function UniversalTechStack({ data }: { data: ServicePageData['te
                   <ul className="space-y-2">
                     {data.llms.map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-caption font-semibold text-slate-600">
-                            <Check size={14} className="text-[#76ea27] mt-0.5 shrink-0" />
+                            {/* Changed text-[#76ea27] to text-brand-green */}
+                            <Check size={14} className="text-brand-green mt-0.5 shrink-0" />
                             <span>{item.name}</span>
                         </li>
                     ))}
@@ -77,7 +82,7 @@ export default function UniversalTechStack({ data }: { data: ServicePageData['te
           </div>
 
           {/* 3. Cloud Platforms */}
-          <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300">
+          <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-primary-blue/5 transition-all duration-300">
              <div className="flex items-center gap-3 mb-6">
                 <div className="h-10 w-10 rounded-xl bg-slate-200/50 flex items-center justify-center text-slate-600">
                    <Cloud size={20} />
@@ -87,6 +92,8 @@ export default function UniversalTechStack({ data }: { data: ServicePageData['te
              <div className="space-y-6">
                {data.cloudPlatforms.map((platform, i) => (
                  <div key={i}>
+                   {/* Note: platform.color usually comes from data (e.g., text-orange-500). 
+                       If you want to enforce primary-blue here, replace ${platform.color} with text-primary-blue */}
                    <h4 className={`text-caption font-black uppercase tracking-widest ${platform.color} mb-2`}>
                      {platform.provider}
                    </h4>

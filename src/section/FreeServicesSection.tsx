@@ -29,7 +29,7 @@ export default function FreeWebsiteSection() {
           <div className="flex-1 p-[40px] lg:p-[60px] flex flex-col justify-center order-2 lg:order-1">
             
             {/* Badge */}
-            <div className="w-fit px-[16px] py-[6px] rounded-lg bg-indigo-50 text-indigo-600 text-[12px] font-bold uppercase tracking-wider mb-[24px] flex items-center gap-2">
+            <div className="w-fit px-[16px] py-[6px] rounded-lg  text-primary-blue text-[12px] font-bold uppercase tracking-wider mb-[24px] flex items-center gap-2">
               <Sparkles size={14} />
               Limited Offer
             </div>
@@ -37,7 +37,7 @@ export default function FreeWebsiteSection() {
             {/* Heading */}
             <h2 className="text-[36px] lg:text-[52px] font-extrabold text-[#0F172A] tracking-tight mb-[24px] leading-[1.1]">
               Build Awesome <br />
-              <span className="text-indigo-600">Free Websites</span>
+              <span className="text-primary-blue">Free Websites</span>
             </h2>
 
             {/* Body Text */}
@@ -57,7 +57,7 @@ export default function FreeWebsiteSection() {
                 <div key={index} className="flex items-center gap-3">
                   <CheckCircle2
                     size={20}
-                    className="text-indigo-600 shrink-0"
+                    className="text-primary-blue shrink-0"
                   />
                   <span className="text-[16px] text-[#475569] font-medium">
                     {item}
@@ -71,7 +71,7 @@ export default function FreeWebsiteSection() {
               {/* Trigger Button for Modal */}
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="inline-flex items-center justify-center gap-[10px] px-[32px] py-[16px] rounded-xl bg-[#0F172A] text-white font-bold text-[16px] transition-all hover:bg-[#4F86E8] hover:shadow-lg hover:shadow-blue-500/20"
+                className="inline-flex items-center justify-center gap-[10px] px-[32px] py-[16px] rounded-xl bg-primary-blue text-white font-bold text-[16px] transition-all hover:bg-brand-green hover:shadow-lg hover:shadow-blue-500/20"
               >
                 Get Started Free
                 <ArrowRight size={18} />
@@ -79,7 +79,7 @@ export default function FreeWebsiteSection() {
 
               <Link
                 href="/service"
-                className="inline-flex items-center justify-center gap-[10px] px-[32px] py-[16px] rounded-xl bg-white border border-[#e2e8f0] text-[#0F172A] font-bold text-[16px] transition-all hover:border-[#0F172A]"
+                className="inline-flex items-center justify-center gap-[10px] px-[32px] py-[16px] rounded-xl bg-white border border-[#e2e8f0] text-[#0F172A] font-bold text-[16px] transition-all hover:border-brand-green"
               >
                 View Services
               </Link>
