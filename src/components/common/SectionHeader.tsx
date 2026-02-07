@@ -29,10 +29,7 @@ export default function SectionHeader({
   const highlightColor = isWhite ? "text-[#76ea27]" : "text-[#2776ea]";
   const descColor = isWhite ? "text-blue-50/80" : "text-slate-500";
   
-  // BADGE LOGIC: "Modern Minimalist Slab"
-  // No borders, no dots. Just a clean color wash with bold text.
-  // Light Mode: A very subtle blue tint background with dark blue text.
-  // Dark Mode: A translucent dark background with bright green text for pop.
+  
   const badgeClass = isWhite
     ? "text-primary-blue"
     : "text-primary-blue";
