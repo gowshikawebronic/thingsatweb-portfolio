@@ -5,7 +5,7 @@ import { ArrowUpRight, Sparkles } from "lucide-react";
 import { motion, Variants } from "framer-motion"; 
 import SectionHeader from "@/components/common/SectionHeader";
 
-import { ServiceCardData } from "./PageServiceCard";
+import { ServiceCardData } from "@/components/services/PageServiceCard";
 
 interface ServiceGridProps {
   services: ServiceCardData[];
