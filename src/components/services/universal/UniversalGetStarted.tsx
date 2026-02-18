@@ -19,7 +19,7 @@ export default function UniversalGetStarted({ data }: { data: ServicePageData['g
           badge={data.badge}
           title={data.titleLines.join(" ")}
           description={data.description}
-          centered={true}
+          align="center"
           className="max-w-3xl mx-auto mb-16"
         />
 

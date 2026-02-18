@@ -22,7 +22,7 @@ export default function UniversalRelatedResources({ data }: { data: ServicePageD
           badge="Ecosystem"
           title="Expand Your Capabilities"
           description="Explore complementary services and documentation to accelerate your roadmap."
-          centered={true}
+          align="center"
           className="max-w-3xl mx-auto mb-16"
         />
 

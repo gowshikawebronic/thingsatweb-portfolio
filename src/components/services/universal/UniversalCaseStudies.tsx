@@ -52,7 +52,7 @@ export default function UniversalCaseStudies({ data }: { data: ServicePageData['
           badge="Success Stories"
           title={data.heading}
           description={data.description}
-          centered={true}
+          align="center"
           className="max-w-3xl mx-auto mb-20"
         />
 

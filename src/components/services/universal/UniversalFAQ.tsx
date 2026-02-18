@@ -37,7 +37,7 @@ export default function UniversalFAQ({ data }: { data: ServicePageData['faq'] })
           badge="Common Questions"
           title={data.heading}
           description="Everything you need to know about our process, deliverables, and engagement models."
-          centered={true}
+          align="center"
           className="mb-16"
         />
 

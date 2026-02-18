@@ -33,7 +33,7 @@ export default function UniversalIndustries({ data }: { data: ServicePageData['i
           badge="Market Expertise"
           title={data.heading}
           description={data.description}
-          centered={true}
+          align="center"
           className="max-w-3xl mx-auto mb-16"
         />
 

@@ -19,7 +19,7 @@ export default function UniversalTechStack({ data }: { data: ServicePageData['te
           badge="Our Ecosystem"
           title={data.heading}
           description={data.description}
-          centered={true}
+          align="center"
           className="max-w-3xl mx-auto mb-20"
         />
 

@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { ArrowUpRight, Sparkles } from "lucide-react";
-// Import framer-motion for the 'variants' prop to work
-import { motion } from "framer-motion"; 
+// 1. Import 'Variants' type to fix the error
+import { motion, Variants } from "framer-motion"; 
 import SectionHeader from "@/components/common/SectionHeader";
 import { ServiceCardData } from "./PageServiceCard";
 
@@ -12,8 +12,8 @@ interface ServiceGridProps {
 }
 
 // --- ANIMATION VARIANTS ---
-// We define these outside the component to avoid re-creation on render
-const containerVariants = {
+// 2. Explicitly type these objects as 'Variants'
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -23,7 +23,7 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
     opacity: 1, 
@@ -34,16 +34,15 @@ const cardVariants = {
 
 export default function ServiceGrid({ services }: ServiceGridProps) {
   return (
-    <section className="relative py-24  font-sora overflow-hidden">
+    <section className="relative py-24 bg-[#FAF7F6] font-sora overflow-hidden">
       
-     
+      
       <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
         
         {/* Header */}
         <div className="max-w-3xl mb-16">
           <SectionHeader 
             badge="Specialized Capabilities"
-            // This requires SectionHeader.tsx to have 'title: React.ReactNode'
             title={
                 <>
                 Extended <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4888E8] to-[#07b022]">Service Suite</span>
@@ -56,7 +55,7 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
           />
         </div>
 
-        {/* The Grid - Note the use of motion.div */}
+        {/* The Grid */}
         <motion.div 
             variants={containerVariants}
             initial="hidden"
@@ -65,7 +64,6 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {services.map((service) => (
-            // Note: variants are passed here, parent triggers the animation
             <motion.div key={service.id} variants={cardVariants} className="h-full">
                 <Link
                   href={`/service?category=${service.id}`}
@@ -75,7 +73,7 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
                 {/* 1. Icon & Action */}
                 <div className="flex justify-between items-start mb-8 relative z-10">
                     <div className="h-16 w-16 rounded-2xl bg-[#F8FAFC] border border-slate-100 flex items-center justify-center text-[#4888E8] group-hover:bg-gradient-to-br group-hover:from-[#4888E8] group-hover:to-[#07b022] group-hover:text-white group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#4888E8]/20 transition-all duration-500">
-                        {/* Assuming service.image is a URL/Path string */}
+                        {/* Mask Image for Icon */}
                         <div
                             className="h-8 w-8 bg-current [mask-repeat:no-repeat] [mask-position:center] [mask-size:contain] [-webkit-mask-repeat:no-repeat] [-webkit-mask-position:center] [-webkit-mask-size:contain]"
                             style={{

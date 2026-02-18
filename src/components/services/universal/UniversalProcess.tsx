@@ -23,7 +23,7 @@ export default function UniversalProcess({ data }: { data: ServicePageData['proc
           badge="Execution Framework"
           title={data.title}
           description={data.description}
-          centered={true}
+          align="center"
           className="max-w-3xl mx-auto mb-24"
         />
 
