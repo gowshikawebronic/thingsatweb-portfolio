@@ -2,106 +2,136 @@
 
 import Link from "next/link";
 import { ArrowUpRight, Sparkles } from "lucide-react";
-// 1. Import SectionHeader
+import { motion, Variants } from "framer-motion"; 
 import SectionHeader from "@/components/common/SectionHeader";
-import { ServiceCardData } from "../../../../components/PageServiceCard";
+
+// ✅ CORRECT IMPORT: Assuming this file is next to PageServiceCard.tsx
+import { ServiceCardData } from "./PageServiceCard";
 
 interface ServiceGridProps {
   services: ServiceCardData[];
 }
 
+// --- ANIMATION VARIANTS ---
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { type: "spring", stiffness: 50, damping: 20 } 
+  },
+};
+
 export default function ServiceGrid({ services }: ServiceGridProps) {
   return (
-    <section className="relative py-24 bg-white font-sora">
-      <div className="container mx-auto px-6 md:px-12 lg:px-24">
+    <section className="relative py-24 bg-[#FAF7F6] font-sora overflow-hidden">
+      
+      {/* Background Decor */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-[#4888E8]/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-[#07b022]/5 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
         
+        {/* Header */}
         <div className="max-w-3xl mb-16">
           <SectionHeader 
+            align="left"
+            color="blue"
             badge="Specialized Capabilities"
-            title="Extended"
-            highlight="Service Suite"
+            title={
+                <>
+                Extended <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4888E8] to-[#07b022]">Service Suite</span>
+                </>
+            }
             description="Beyond our core platforms, we offer specialized engineering and consulting services tailored to enterprise needs"
-            centered={false}
             className="mb-0" 
           />
         </div>
 
         {/* The Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {services.map((service) => (
-            <Link
-              key={service.id}
-              href={`/service?category=${service.id}`}
-              // Changed hover:shadow-blue-900/10 to hover:shadow-primary-blue/10
-              // Changed hover:border-[#2776ea]/20 to hover:border-primary-blue/20
-              className="group relative h-full bg-slate-50 rounded-[2rem] border border-slate-100 p-8 overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-blue/10 hover:bg-white hover:border-primary-blue/20 flex flex-col"
-            >
-              {/* Hover Gradient Background */}
-              {/* Changed to-[#2776ea]/5 to to-primary-blue/5 */}
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <motion.div key={service.id} variants={cardVariants} className="h-full">
+                <Link
+                  href={`/service?category=${service.id}`}
+                  className="group relative h-full bg-white rounded-[2.5rem] border border-slate-100 p-8 md:p-10 overflow-hidden flex flex-col transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#0F172A]/5 hover:border-[#4888E8]/30"
+                >
+                
+                {/* 1. Icon & Action */}
+                <div className="flex justify-between items-start mb-8 relative z-10">
+                    <div className="h-16 w-16 rounded-2xl bg-[#F8FAFC] border border-slate-100 flex items-center justify-center text-[#4888E8] group-hover:bg-gradient-to-br group-hover:from-[#4888E8] group-hover:to-[#07b022] group-hover:text-white group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#4888E8]/20 transition-all duration-500">
+                        <div
+                            className="h-8 w-8 bg-current [mask-repeat:no-repeat] [mask-position:center] [mask-size:contain] [-webkit-mask-repeat:no-repeat] [-webkit-mask-position:center] [-webkit-mask-size:contain]"
+                            style={{
+                              maskImage: `url('${service.image.replaceAll(" ", "%20")}')`,
+                              WebkitMaskImage: `url('${service.image.replaceAll(" ", "%20")}')`,
+                            }}
+                        />
+                    </div>
 
-              {/* Top Row: Icon & Arrow */}
-              <div className="flex justify-between items-start mb-8 relative z-10">
-                {/* Changed text-[#2776ea] to text-primary-blue */}
-                {/* Changed group-hover:bg-[#2776ea] to group-hover:bg-primary-blue */}
-                <div className="h-14 w-14 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center text-primary-blue group-hover:scale-110 group-hover:bg-primary-blue group-hover:text-white transition-all duration-500">
-                  <div
-                    className="h-7 w-7 bg-current
-      [mask-repeat:no-repeat] [mask-position:center] [mask-size:contain]
-      [-webkit-mask-repeat:no-repeat] [-webkit-mask-position:center] [-webkit-mask-size:contain]"
-                    style={{
-                      maskImage: `url('${service.image.replaceAll(" ", "%20")}')`,
-                      WebkitMaskImage: `url('${service.image.replaceAll(" ", "%20")}')`,
-                    }}
-                  />
+                    <div className="h-10 w-10 rounded-full bg-white border border-slate-100 flex items-center justify-center text-slate-300 group-hover:border-[#07b022] group-hover:text-[#07b022] group-hover:bg-[#07b022]/5 group-hover:rotate-45 transition-all duration-300">
+                        <ArrowUpRight size={20} />
+                    </div>
                 </div>
 
-                {/* Arrow Icon */}
-                {/* Changed group-hover:border-[#2776ea] and text-[#2776ea] to primary-blue */}
-                <div className="h-10 w-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-primary-blue group-hover:text-primary-blue group-hover:rotate-45 transition-all duration-300">
-                  <ArrowUpRight size={18} />
+                {/* 2. Content */}
+                <div className="relative z-10 flex-grow mb-8">
+                    <h3 className="text-2xl font-black text-[#0F172A] mb-4 group-hover:text-[#4888E8] transition-colors duration-300">
+                        {service.title}
+                    </h3>
+                    <p className="text-base font-medium text-slate-500 leading-relaxed line-clamp-3 group-hover:text-slate-600 transition-colors">
+                        {service.description}
+                    </p>
                 </div>
-              </div>
 
-              {/* Content */}
-              <div className="relative z-10 flex-grow">
-                {/* Changed group-hover:text-[#2776ea] to group-hover:text-primary-blue */}
-                <h3 className="text-h3 font-bold text-slate-900 mb-3 group-hover:text-primary-blue transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-body font-medium text-slate-500 leading-relaxed mb-6 line-clamp-3">
-                  {service.description}
-                </p>
-              </div>
-
-              {/* Tech Stack Pills */}
-              <div className="relative z-10 mt-auto pt-6 border-t border-slate-200/50">
-                <div className="flex flex-wrap gap-2">
-                  {service.technologies.slice(0, 3).map((tech, i) => (
-                    <span
-                      key={i}
-                      // Changed group-hover:border-[#2776ea]/30 and text-[#2776ea] to primary-blue
-                      className="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-caption font-bold text-slate-500 uppercase tracking-wide group-hover:border-primary-blue/30 group-hover:text-primary-blue transition-colors"
-                    >
-                      {tech.name}
-                    </span>
-                  ))}
-                  {service.technologies.length > 3 && (
-                    <span className="px-3 py-1.5 rounded-lg bg-slate-100 text-caption font-bold text-slate-400">
-                      +{service.technologies.length - 3}
-                    </span>
-                  )}
+                {/* 3. Tech Stack */}
+                <div className="relative z-10 mt-auto pt-6 border-t border-slate-50">
+                    <div className="flex flex-wrap gap-2">
+                    {service.technologies.slice(0, 3).map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1.5 rounded-lg bg-[#F8FAFC] border border-slate-100 text-[10px] font-black text-slate-500 uppercase tracking-wider group-hover:bg-white group-hover:text-[#4888E8] group-hover:border-[#4888E8]/20 transition-all duration-300"
+                        >
+                        {tech.name}
+                        </span>
+                    ))}
+                    {service.technologies.length > 3 && (
+                        <span className="px-3 py-1.5 rounded-lg bg-slate-50 text-[10px] font-black text-slate-400 border border-transparent">
+                        +{service.technologies.length - 3}
+                        </span>
+                    )}
+                    </div>
                 </div>
-              </div>
 
-              {/* Decorative "Sparkle" on Hover */}
-              {/* Changed text-[#2776ea]/10 to text-primary-blue/10 */}
-              <div className="absolute -bottom-4 -right-4 text-primary-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-150 pointer-events-none">
-                <Sparkles size={120} strokeWidth={0.5} />
-              </div>
-            </Link>
+                {/* 4. Decorative Sparkle */}
+                <div className="absolute -bottom-10 -right-10 text-[#07b022]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 scale-150 pointer-events-none rotate-12">
+                    <Sparkles size={200} strokeWidth={0.5} />
+                </div>
+                
+                {/* 5. Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-[#4888E8]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
